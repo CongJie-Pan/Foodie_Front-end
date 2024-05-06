@@ -1,4 +1,147 @@
-*{ /*初始化*/
-    padding: 0px;
+/*-----------------------*/
+/* --- 全局設定 --- */
+/*-----------------------*/
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
     margin: 0px;
+    font-family: 微軟正黑體;
+    background-color: #dbd7d1;
+    display: grid;
+    grid-template-rows: 400px auto 40px;
+    grid-template-columns: 15% 1fr 2fr 15%;
+}
+
+/*-----------------------*/
+/* --- 分隔線設定 --- */
+/*-----------------------*/
+
+.separator{ /* 基本分隔線設定 */
+
+    border-top: 1px solid #7b7b7b; /* 黑色分隔線，1px 寬度 */
+    width: 50%; /* 線寬度 */
+    margin: 30px auto;  /* 與其他元素間距增大，中間對齊 */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* 添加陰影效果 */
+
+}
+
+.separator_MyAbility{ /* 各項能力處的分隔線設定 */
+
+    border-top: 1px solid #7b7b7b; /* 黑色分隔線，1px 寬度 */
+    width: 50%; /* 線寬度 */
+    margin: 30px auto; /* 與其他元素間距增大，中間對齊 */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* 添加陰影效果 */
+
+}
+
+/*-----------------------*/
+/* --- 最上方欄位設定 --- */
+/*-----------------------*/
+
+nav{ /* 最上方欄位 */
+
+    top: 0; /* 距離視口頂部的距離 */
+    left: 0; /* 距離視口左側的距離 */
+    width: 100%; /* 工具列寬度擴展至視口的整個寬度 */
+    background-color: #ffea00; /* 排版測試用*/
+    /*background-color: #f7f7f7;*/
+    color: #393939;
+    padding: 6px;
+    text-align: center;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* 添加微弱的黑色陰影 */
+    
+    /* --- 以下將最上方欄位，視為動態導覽(點擊後可以導覽到該處) 所用 --- */
+
+    /*position: fixed; /* 將工具列固定在視口頂部 */
+    /*transition: top 0.3s; /* 添加過渡效果 */
+    /*z-index: 1000; /* 設置工具列的 z-index 值，使工具列可以保持在最上圖層 */
+    /*box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* 添加微弱的黑色陰影 */
+    
+}
+
+nav a{ /*  上方欄位內各欄位樣式設定 */
+    padding: 30px 20px; /* 留白 */
+    display: inline-block;
+    text-decoration: none; /* 消除下畫線 */
+    color: inherit;
+    font-family: "source-han-serif-tc", serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 18px;
+    transition: background-color 0.5s, color 0.5s; /* 使用過渡效果 */
+    
+}
+
+nav a:hover{ /* 偵測滑鼠有無滑到此處 */
+    background-color: #b7beb4;
+    color: #353535;
+    color: inherit;
+    text-decoration: none;
+}
+
+/*-----------------------*/
+/* --- Carousel 圖片輪播 --- */
+/*-----------------------*/
+
+.Carousel {
+
+    grid-row: 2/3;
+    grid-column: 3/4;
+    background-color: aquamarine;
+
+}
+
+/*-----------------------*/
+/* --- TrendingProduct 人氣排行 --- */
+/*-----------------------*/
+
+.TrendingProduct {
+
+    background-color: blueviolet;
+
+}
+
+/*-----------------------*/
+/* --- NewArrivals 新品上架 --- */
+/*-----------------------*/
+
+.NewArrivals {
+
+    background-color:chocolate;
+
+}
+
+/*-----------------------*/
+/* --- Recommendation 精選推薦 --- */
+/*-----------------------*/
+
+.Recommendation{
+
+    background-color:rgb(28, 184, 28);
+
+}
+
+/*-----------------------*/
+/* --- ContactInfo 聯絡資訊 --- */
+/*-----------------------*/
+
+.ContactInfo{
+
+    background-color: fuchsia;
+
+}
+
+/*-----------------------*/
+/* --- footer 頁尾 --- */
+/*-----------------------*/
+
+footer {
+
+    background-color: cornflowerblue;
+
 }
