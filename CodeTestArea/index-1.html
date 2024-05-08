@@ -1,0 +1,207 @@
+<!doctype html>
+
+<html lang="en" data-bs-theme="auto">
+
+  <head>
+    
+    <script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+
+    <!-- 網頁標題 -->
+    <title> 吃貨道| 吃貨的專屬門道 </title> 
+
+    <!-- 引用 Bootstrap 套件---> 
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/masonry/">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 使用font-awesome線上免下載圖標(icon) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- 引用 Source han serif font 思源宋體字型-->
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'qlq8udi',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+  
+    <!-- css 樣式檔案 -->
+    <link href="index-1.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- 上方欄位 (工具欄)
+    ================================================== -->
+
+    <nav class="py-2 bg-body-tertiary border-bottom">
+
+      <div class="container d-flex flex-wrap">
+
+        <ul class="nav me-auto">
+          <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2 active" aria-current="page">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Pricing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">FAQs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">About</a></li>
+        </ul>
+
+        <ul class="nav">
+          <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Login</a></li>
+          <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Sign up</a></li>
+        </ul>
+
+      </div>
+
+    </nav>
+
+    <header class="py-3 mb-4 border-bottom" style="background-color: rgb(255, 255, 255);">
+
+      <div class="container d-flex flex-wrap justify-content-center">
+
+        <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+          <span class="fs-4">Double header</span>
+        </a>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
+          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+        </form>
+
+      </div>
+
+    </header>
+
+      <!-- 圖片輪播 
+      ================================================== -->
+
+      <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+            <div class="container">
+              <div class="carousel-caption text-start">
+                <h1>Example headline.</h1>
+                <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Another example headline.</h1>
+                <p>Some representative placeholder content for the second slide of the carousel.</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+            <div class="container">
+              <div class="carousel-caption text-end">
+                <h1>One more for good measure.</h1>
+                <p>Some representative placeholder content for the third slide of this carousel.</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+      </div>
+
+      <!-- 人氣排行 (圖卡區) 
+      ================================================== -->
+
+      <section class="TrendingProduct">
+
+        <div class="PictureTitle">
+          <img src="/picture/material/TrendingTitle.png" alt="Description of your image" style="width: 100px; height: auto;">
+        </div>
+
+        <div class="col-sm-6 col-lg-4 mb-4 card-hover"> <!-- 商品圖卡 01-->
+          <a href="https://www.youtube.com/" style="text-decoration: none;">
+              <div class="card" style="width: 392px; height: 420px;">
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
+                  <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                  </div>
+              </div>
+          </a>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 mb-4 card-hover"> <!-- 商品圖卡 01-->
+        <a href="https://www.youtube.com/" style="text-decoration: none;">
+            <div class="card" style="width: 392px; height: 420px;">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </a>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 mb-4 card-hover"> <!-- 商品圖卡 01-->
+        <a href="https://www.youtube.com/" style="text-decoration: none;">
+            <div class="card" style="width: 392px; height: 420px;">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </a>
+      </div>
+
+      </section>
+
+    
+
+    <!-- Javascript 區域 -->
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script></body>
+
+  </body>
+  
+</html>
