@@ -129,32 +129,68 @@ body {
 -------------------------------------------------- */
 
 .TrendingProduct{
+
+  /*
+  display: grid;
+  grid-template-rows: 20px 420px 40px;
+  grid-template-columns: 20px 330px 330px 330px 20px;
+  min-height: 100vh;*/
+
+  
   background-color: aqua;
   display: flex;
-  justify-content: center; /* 水平方向置中 */
-  align-items: center; /* 垂直方向置中 */
+  justify-content: center; 
+  align-items: center; 
   padding-top: 40px;
   padding-bottom: 2px;
+
 }
 
 .PictureTitle{
+
+  /* grid-row: 1/2; 
+  grid-column: 2/3; */
+
+  background-color: #712cf9;
+  
+  width: 50px;
+  height: 50px;
+  
   margin-bottom: 80px;
 	display: inline-block;
 	vertical-align: middle;
 	position: relative;
 	cursor: default;
+
 }
 
 .card-hover {
+  /*
+  grid-row: 2/3;
+  grid-column: 2/3;*/
+
   transition: box-shadow 0.3s; /* 添加過渡效果 */
-  width: 392px; /* 與 card 元素相同的寬度 */
+  width: 330px; /* 與 card 元素相同的寬度 */
   height: 420px; /* 與 card 元素相同的高度 */
   margin:20px;
 }
-
 .card-hover:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 滑鼠懸停時添加陰影效果 */
 }
+
+.ResgisterForSale {
+
+  /*
+  grid-row: 3/4;
+  grid-column: 2/5;
+  */
+
+  width: 50px;
+  height: 50px;
+  background-color: #5a23c8;
+
+}
+
 
 .bd-placeholder-img {
   font-size: 1.125rem;
