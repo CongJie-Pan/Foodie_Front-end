@@ -9,7 +9,10 @@
 
 body {
   margin: 0px;
-  font-family: 微軟正黑體;
+  font-family: "Noto Sans TC", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   /*background-color: #d28718;*/
   background-color: #e6e6e6;
   /*padding-bottom: 3rem;*/
@@ -27,22 +30,98 @@ body {
 
 /* 上方欄位 (工具欄)
 -------------------------------------------------- */
+.navbar-expand-lg{
+  background-color: #cec0b4;
+  height:auto;
+  padding: 0px;
+  border: 0px;
+  margin: 0px;
+}
+.navOneRow{
+  width: 100%;
+  height:100%;
+  margin: 0px;
+}
 
-.form-control-dark {
-  border-color: var(--bs-gray);
+.navLogo{
+  display: inline-block;
+  position: relative;
+  cursor: default;
+  width: 100%;
 }
-.form-control-dark:focus {
-  border-color: #ffffff;
-  box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+.navLogo img {
+  width: 105px;
+  height: auto; /* 自動計算高度，保持圖片比例 */
+  display: block; /* 設定為區塊元素 */
+  margin-left: 200px; /* 將左側邊距自動設置為最大化，使圖像水平向右對齊 */
+  /*padding-right: 25px;*/
 }
 
-.text-small {
-  font-size: 85%;
+.searchBarCol{
+  width: auto;
+
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 20px;
 }
 
-.dropdown-toggle:not(:focus) {
-  outline: 0;
+.searchBar{
+  background-color: #ffffff;
 }
+
+.searchBar::placeholder { /*更改搜尋本字的顏色*/
+  color: #8b7e71; 
+  font-weight: bold;
+
+}
+
+.BuyCart_and_Account{
+  
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 20px;
+}
+
+/* 工具列第二欄下拉式選單*/
+
+.navCol-2  {
+  list-style: none;
+  margin: 0px;
+  border: 0px;
+  background-color: #f7f7f7;
+  width: 100%;
+  margin-left: 0px;
+  
+}
+
+
+.dropdown-menu{
+  background: none;
+    /*border: 1px solid #7b6b5e; /* 添加邊框 */
+}
+
+.nav-link:hover{
+  background-color: #ece3d5;
+}
+
+
+.dropdown-item{
+  background-color: transparent; /* 背景設為透明 */
+  backdrop-filter: blur(10px); /* 應用模糊效果 */
+  padding: 5px;
+  color:#7b6b5e;
+  text-align:justify;
+  font-weight: bold;
+  border: 1px solid #000; /* 添加邊框 */
+  
+}
+.dropdown-item:hover{
+  background-color: #e9c48d;
+  color: #3f3f3f;
+}
+
+
+
 
 
 /* 圖片輪播
@@ -199,6 +278,14 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 滑鼠懸停時添加陰影效果 */
 }
 
+.CardGridInside{
+  display: grid;
+  grid-template-rows: 250px 56px 56px 56px; /*250px 56px 56px 56px*/
+  width: 330px; 
+  height: 420px; 
+  position: relative;
+  background-color: rgb(255, 255, 255);
+}
 /* -------------- */
 
 .ResgisterForSale img{
