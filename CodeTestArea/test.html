@@ -1,184 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Combined Version</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Custom CSS */
-        /* TrendingProduct 人氣排行 (圖卡區) */
-        .TrendingProduct{
-            background-color: brown;
-        }
-
-        .TrendingProduct_CardContainer{
-            background-color: rgb(0, 212, 244);
-            display: flex;
-            justify-content: center; 
-            align-items: center; 
-        }
-
-        .PictureTitle{
-            background-color: #712cf9;
-            display: inline-block;
-            vertical-align: middle;
-            position: relative;
-            cursor: default;
-        }
-
-        .PictureTitle img{
-            width: 200px;
-            height: auto; /* 自動計算高度，保持圖片比例 */
-        }
-
-        .ResgisterForSale{
-            background-color: #712cf9;
-        }
-
-        .card-hover {
-            transition: box-shadow 0.3s; /* 添加過渡效果 */
-            width: 330px; /* 與 card 元素相同的寬度 */
-            height: 420px; /* 與 card 元素相同的高度 */
-            margin:40px;
-        }
-        .card-hover:hover {
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 滑鼠懸停時添加陰影效果 */
-        }
-
-        .ResgisterForSale img{
-            width: 1000px;
-            height: auto; /* 自動計算高度，保持圖片比例 */
-        }
-
-        /* Bootstrap Overrides */
-        .col-empty {
-            flex: 1;
-        }
-
-        .border {
-            border: 1px solid #dee2e6;
-        }
-
-        /* Additional Bootstrap Overrides */
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        .b-example-divider {
-            width: 100%;
-            height: 3rem;
-            background-color: rgba(0, 0, 0, .1);
-            border: solid rgba(0, 0, 0, .15);
-            border-width: 1px 0;
-            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-        }
-
-        .b-example-vr {
-            flex-shrink: 0;
-            width: 1.5rem;
-            height: 100vh;
-        }
-
-        .bi {
-            vertical-align: -.125em;
-            fill: currentColor;
-        }
-
-        .bd-mode-toggle {
-            z-index: 1500;
-        }
-
-        .bd-mode-toggle .dropdown-menu .active .bi {
-            display: block !important;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smooth Scroll Example</title>
+<style>
+html {
+    scroll-behavior: smooth;
+}
+section {
+    height: 500px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+.navbar {
+    background-color: #f8f9fa;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+}
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.navbar li {
+    margin: 0 10px;
+}
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+</style>
 </head>
 <body>
 
-<div class="TrendingProduct_CardContainer">
-    <div class="row">
-        <div class="col"></div> <!-- 左側空白 -->
-        
-        <div class="col-md-8">
-            <!-- 第一層 -->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="border p-3">
-                        <!-- First Layer Content -->
-                        <div class="PictureTitle">
-                            <img src="/picture/material/TrendingTitle.png" alt="PitureForm_Of_Title">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 第二層 -->
-            <div class="row TrendingProduct_CardContainer">
-                <div class="col-sm-6 col-lg-4 mb-4 card-hover position-relative"> <!-- 商品圖卡 01-->
-                    <a href="https://www.youtube.com/" style="text-decoration: none; position: relative;">
-                        <div class="card" style="width: 330px; height: 420px; position: relative;">
-                            <img src="/picture/material/firstPlace.png" alt="FirstPlacePic" style="width:75px; height:auto; position: absolute; top: -20px; left: -20px;">
-                            <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-        
-                <div class="col-sm-6 col-lg-4 mb-4 card-hover position-relative"> <!-- 商品圖卡 02-->
-                    <a href="https://www.youtube.com/" style="text-decoration: none; position: relative;">
-                        <div class="card" style="width: 330px; height: 420px; position: relative;">
-                            <img src="/picture/material/secondPlace.png" alt="FirstPlacePic" style="width:75px; height:auto; position: absolute; top: -20px; left: -20px;">
-                            <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-        
-                <div class="col-sm-6 col-lg-4 mb-4 card-hover position-relative"> <!-- 商品圖卡 03-->
-                    <a href="https://www.youtube.com/" style="text-decoration: none; position: relative;">
-                        <div class="card" style="width: 330px; height: 420px; position: relative;">
-                            <img src="/picture/material/thirdPlace.png" alt="FirstPlacePic" style="width:75px; height:auto; position: absolute; top: -20px; left: -20px;">
-                            <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <!-- 第三層 -->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="border p-3">
-                        <!-- Third Layer Content -->
-                        <div class="ResgisterForSale">
-                            <img src="/picture/material/RegisterForSales.png" alt="Piture_Of_ResgisterForSale">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col"></div> <!-- 右側空白 -->
-    </div>
+<div class="navbar">
+    <ul>
+        <li><a href="#section1">Section 1</a></li>
+        <li><a href="#section2">Section 2</a></li>
+        <li><a href="#section3">Section 3</a></li>
+    </ul>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<section id="section1">
+    <h2>Section 1</h2>
+    <p>This is section 1.</p>
+</section>
+
+<section id="section2">
+    <h2>Section 2</h2>
+    <p>This is section 2.</p>
+</section>
+
+<section id="section3">
+    <h2>Section 3</h2>
+    <p>This is section 3.</p>
+</section>
+
 </body>
 </html>

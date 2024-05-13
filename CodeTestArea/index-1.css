@@ -27,6 +27,9 @@ body {
   /*box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* 添加陰影效果 */
 
 }
+html {
+  scroll-behavior: smooth;
+}
 
 /* 上方欄位 (工具欄)
 -------------------------------------------------- */
@@ -75,6 +78,13 @@ body {
 
 }
 
+.searchBar.focused {
+  background-color: #ffffff; /* 修改為您想要的背景顏色 */
+  color: #8b7e71; /* 修改為您想要的文字顏色 */
+  font-weight: bold;
+  
+}
+
 .BuyCart_and_Account{
   
   display: flex;
@@ -106,17 +116,16 @@ body {
 
 
 .dropdown-item{
-  background-color: transparent; /* 背景設為透明 */
-  backdrop-filter: blur(10px); /* 應用模糊效果 */
+  background-color: #eacfa8;
   padding: 5px;
-  color:#7b6b5e;
+  color:#3f3f3f;
   text-align:justify;
   font-weight: bold;
   border: 1px solid #000; /* 添加邊框 */
   
 }
 .dropdown-item:hover{
-  background-color: #e9c48d;
+  background-color: #fef6ea;
   color: #3f3f3f;
 }
 
