@@ -1,4 +1,9 @@
+/* 會員註冊與登入 css 檔案*/
+/* ========== 全局設定 ========== */
 
+*{
+  font-family: "Noto Sans TC", sans-serif;
+}
 
 /* ========== 登入 ========== */
 .modal {
@@ -10,28 +15,56 @@
   width: 100%;
   height: 100%;
   overflow: auto;
+  font-family: "Noto Sans TC", sans-serif;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
   padding-top: 60px;
 }
 
-/* Add Zoom Animation */
+/* 加入伸縮(zoom)特效 */
 .animate {
   -webkit-animation: animatezoom 0.6s;
   animation: animatezoom 0.6s
 }
 
-/* 登入 */
+/* ========== 登入與註冊面板設定 ========== */
+
+/* 登入與註冊面板 */
+
+.container_Login form {
+  background-color: #fafaf0;
+  font-family: "Noto Sans TC", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
+.container_Login {
+  background-color: #fafaf0;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20%;
+  overflow: hidden;
+  width: 700px;
+  /* max-width: 100%; */
+  min-height: 420px;
+}
+
 .container_Login h1 {
-  font-family: 'GenRyuMin-M';
   font-size: 26px;
   letter-spacing: 3px;
-  font-weight: 700;
   margin: 0;
 }
 
 .container_Login p {
-  font-family: 'GenRyuMin-M';
   font-size: 16px;
   letter-spacing: 3px;
   line-height: 20px;
@@ -44,7 +77,6 @@
   border: 1px solid #818181;
   background-color: #818181;
   color: #FFFFFF;
-  font-family: 'GenRyuMin-M';
   font-size: 16px;
   letter-spacing: 3px;
   padding: 10px 35px;
@@ -66,25 +98,13 @@
   outline: none;
 }
 
-.container_Login button.ghost {
-  background-color: transparent;
-  border-color: #FFFFFF;
+.container_Login button.registerLoginBtn {
+  background-color: #d6d2c8;
+  color: #644623;
 }
 
-
-.container_Login form {
-  background-color: #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 0 50px;
-  height: 100%;
-  text-align: center;
-}
 
 .container_Login input {
-  font-family: 'Mukta', sans-serif;
   background-color: #eee;
   border: none;
   border-radius: 5px;
@@ -94,22 +114,9 @@
   font-size: 14px;
 }
 
-.container_Login {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-    0 10px 10px rgba(0, 0, 0, 0.22);
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 20%;
-  overflow: hidden;
-  width: 700px;
-  /* max-width: 100%; */
-  min-height: 420px;
-}
 
 .form-container {
+  font-family: "Noto Sans TC", sans-serif;
   position: absolute;
   top: 0;
   height: 100%;
@@ -120,6 +127,7 @@
   left: 0;
   width: 50%;
   z-index: 2;
+  font-family: "Noto Sans TC", sans-serif;
 }
 
 .container_Login.right-panel-active .sign-in-container {
@@ -155,6 +163,9 @@
   }
 }
 
+/* ========== 過度後旁邊的面板樣式設定 ========== */
+
+/* 整體過度頁面容器 */
 .overlay-container {
   position: absolute;
   top: 0;
@@ -171,7 +182,7 @@
 }
 
 .overlay {
-  background: #818181;
+  background: #88746c;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
@@ -205,6 +216,9 @@
 
 .overlay-left {
   transform: translateX(-20%);
+  background-color: #81766c;
+  color: #e2e0d6;
+  font-weight: 800;
 }
 
 .container_Login.right-panel-active .overlay-left {
@@ -214,6 +228,9 @@
 .overlay-right {
   right: 0;
   transform: translateX(0);
+  background-color: #81766c;
+  color: #e2e0d6;
+  font-weight: 800;
 }
 
 .container_Login.right-panel-active .overlay-right {

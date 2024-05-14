@@ -88,90 +88,106 @@
               </form>
             </div>
 
+          <!-- 右側兩個按鈕欄位 -->
           <div class="col-sm BuyCart_and_Account" style="padding-left: 20px;">
 
+            <!-- 購物車按鈕 --> 
             <button type="button" class="btn btn-light" style="width: auto;height:auto;">
               <i class="fa fa-shopping-cart" aria-hidden="true" style="font-size: 22px;"></i>
             </button>
             
+            <!-- 會員註冊登入按鈕 -->
             <button onclick="document.getElementById('id01').style.display='block'" type="button" class="btn btn-light" style="width: auto;height:auto;font-weight: bold;margin-left:10px;">
               <i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size: 22px;"></i>
               會員註冊/登入
             </button>
 
-            <div id="id01" class="modal">
-                <div class="container_Login" id="container">
+              <!-- 會員註冊登入頁面 --> 
+              <div id="id01" class="modal">
+
+                  <div class="container_Login" id="container">
+
                     <div class="form-container sign-up-container">
+
                         <form action="#">
-                            <h1>創立帳戶</h1>
-                            <input type="text" placeholder="Account" />
-                            <input type="email" placeholder="Email" />
-                            <input type="password" placeholder="Password" />
-                            <button>註冊</button>
+                            <h1 style="color: #281805;font-weight: 900; bolder;padding-bottom: 15px;font-weight: 800;">註冊新會員</h1>
+                            <input type="email" style="color: #66625e;font-weight: 800;background-color: #eaeaea;" placeholder="電子郵件" />
+                            <input type="password" style="color: #66625e;font-weight: 800;background-color: #eaeaea;" placeholder="密碼" />
+                            <input type="password" style="color: #66625e;font-weight: 800;background-color: #eaeaea;" placeholder="確認密碼" />
+                            <button style="background-color: #a59e94;color: #ffffff;border: 0px;">註冊</button>
                         </form>
                     </div>
+                    
                     <div class="form-container sign-in-container">
+
                         <form action="#">
-                            <h1>登入</h1>
-                            <input type="email" placeholder="Account" />
-                            <input type="password" placeholder="Password" />
-                            <button>登入</button>
+                            <h1 style="color: #281805;font-weight: 900; bolder;padding-bottom: 15px;">登入</h1>
+                            <input type="email" style="color: #66625e;font-weight: 800;background-color: #eaeaea;" placeholder="電子郵件" />
+                            <input type="password" style="color: #66625e;font-weight: 800;background-color: #eaeaea;" placeholder="密碼" />
+                            <button style="background-color: #a59e94;color: #ffffff;border: 0px;">登入</button>
                         </form>
+
                     </div>
+
+                    <!-- 提示轉換登入與註冊介面 -->
                     <div class="overlay-container">
+
                         <div class="overlay">
                             <div class="overlay-panel overlay-left">
-                                <h1>已註冊過</h1>
-                                <p>點擊以登入</p>
-                                <button class="ghost" id="signIn">登入</button>
+                                <h1 style="font-weight: 900;">已註冊會員</h1>
+                                <p style="font-size: 20px;">馬上登入！</p>
+                                <button class="registerLoginBtn" id="signIn">前往登入</button>
                             </div>
                             <div class="overlay-panel overlay-right">
-                                <h1>尚未註冊</h1>
-                                <p>創建新帳戶</p>
-                                <button class="ghost" id="signUp">註冊</button>
+                                <h1 style="font-weight: 900;">還沒成為會員嗎？</h1>
+                                <p style="font-size: 20px;">立即註冊加入會員吧！</p>
+                                <button class="registerLoginBtn" id="signUp">前往註冊</button>
                             </div>
                         </div>
+
                     </div>
-                </div>
+              </div>
             </div>
 
-          <!-- ========== JS語法 ========== -->
-          <!-- 導覽列 -->
-          <script src="javascript/h.js" charset="utf-8"></script>
+            <!-- ========== 會員登入註冊介面之 JS語法 ========== -->
+            <!-- 導覽列 -->
+            <script src="javascript/h.js" charset="utf-8"></script>
 
-          <!--滑動頁面-->
-          <script>
-              let b1 = document.getElementById('b1');
-              let btt1 = document.getElementById('btt1');
+            <!--滑動頁面-->
+            <script>
+                let b1 = document.getElementById('b1');
+                let btt1 = document.getElementById('btt1');
 
-              window.addEventListener('scroll',function(){
-                  let value = window.scrollY;
-                  b1.style.top = value *1 + 'px';
-                  btt1.style.top = value *0.5 + 'px';
-              })
-          </script>
-          <!--幻燈片-->
-          <script>
-              var myIndex = 0;
-              carousel();
+                window.addEventListener('scroll',function(){
+                    let value = window.scrollY;
+                    b1.style.top = value *1 + 'px';
+                    btt1.style.top = value *0.5 + 'px';
+                })
+            </script>
+            <!--幻燈片-->
+            <script>
+                var myIndex = 0;
+                carousel();
 
-              function carousel() {
-              var i;
-              var x = document.getElementsByClassName("mySlides");
-              for (i = 0; i < x.length; i++) {
-                  x[i].style.display = "none";  
-              }
-              myIndex++;
-              if (myIndex > x.length) {myIndex = 1}    
-              x[myIndex-1].style.display = "block";  
-              setTimeout(carousel, 4000); // Change image every 2 seconds
-              }
-          </script>
-          <!-- 滑動特效 -->
-          <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-          <script>
-              AOS.init({duration:1000,once:true});
-          </script>
+                function carousel() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";  
+                }
+                myIndex++;
+                if (myIndex > x.length) {myIndex = 1}    
+                x[myIndex-1].style.display = "block";  
+                setTimeout(carousel, 4000); // Change image every 2 seconds
+                }
+            </script>
+            <!-- 滑動特效 -->
+            <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+            <script>
+                AOS.init({duration:1000,once:true});
+            </script>
+            <!-- ==================== -->
+
           </div>
         </div>
 
@@ -190,7 +206,7 @@
           <div class="collapse navbar-collapse justify-content-md-center navCol-2" id="navbarsExample08"> 
 
             <li class="nav-item dropdown">
-              <a class="nav-link " href="#" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 20px;color: #6e573a;font-weight: 1000;">商品瀏覽</a>
+              <a class="nav-link " href="#" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 20px;color: #6e573a;font-weight: 1000;font-size: 18px;">商品瀏覽</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">所有商品</a></li>
                 <li><a class="dropdown-item" href="#">泡麵</a></li>
@@ -200,7 +216,7 @@
             </li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link " href="#" data-bs-toggle="dropdown" aria-expanded="flase" style="padding: 20px;color: #6e573a;font-weight: 1000;">關於我們</a>
+              <a class="nav-link " href="#" data-bs-toggle="dropdown" aria-expanded="flase" style="padding: 20px;color: #6e573a;font-weight: 1000;font-size: 18px;">關於我們</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">品牌理念</a></li>
                 <li><a class="dropdown-item" href="#">成員介紹</a></li>
@@ -208,7 +224,7 @@
             </li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link" href="#FooterArea"  aria-expanded="false" style="padding: 20px;color: #6e573a;font-weight: 1000;">聯絡我們</a>
+              <a class="nav-link" href="#FooterArea"  aria-expanded="false" style="padding: 20px;color: #6e573a;font-weight: 1000;font-size: 18px;">聯絡我們</a>
             </li>
 
           </div>
