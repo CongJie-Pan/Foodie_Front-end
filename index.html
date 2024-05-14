@@ -28,6 +28,13 @@
     <!-- 使用font-awesome線上免下載圖標(icon) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- 登入欄位引用線上資源 -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- header -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- header -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
     <!-- 引用 思源黑體字形 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,6 +42,9 @@
 
     <!-- css 樣式檔案 -->
     <link href="stylesheets/index.css" rel="stylesheet">
+
+    <!-- 登入註冊樣式檔  -->
+    <link rel="stylesheet" href="stylesheets/LoginArea.css"> 
 
   </head>
 
@@ -51,6 +61,7 @@
         <!-- 工具欄第一欄內容物容器 -->
         <div class="row navOneRow">
 
+          <!-- 圖標logo-->
           <div class="col-sm navLogoCol" >
             <div class="navLogo" >
               <img src="/picture/material/navPic/navLogo.png" alt="navLogoPic">
@@ -78,15 +89,89 @@
             </div>
 
           <div class="col-sm BuyCart_and_Account" style="padding-left: 20px;">
+
             <button type="button" class="btn btn-light" style="width: auto;height:auto;">
               <i class="fa fa-shopping-cart" aria-hidden="true" style="font-size: 22px;"></i>
             </button>
-            <button type="button" class="btn btn-light" style="width: auto;height:auto;font-weight: bold;margin-left:10px;">
+            
+            <button onclick="document.getElementById('id01').style.display='block'" type="button" class="btn btn-light" style="width: auto;height:auto;font-weight: bold;margin-left:10px;">
               <i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size: 22px;"></i>
               會員註冊/登入
-              
-              
             </button>
+
+            <div id="id01" class="modal">
+                <div class="container_Login" id="container">
+                    <div class="form-container sign-up-container">
+                        <form action="#">
+                            <h1>創立帳戶</h1>
+                            <input type="text" placeholder="Account" />
+                            <input type="email" placeholder="Email" />
+                            <input type="password" placeholder="Password" />
+                            <button>註冊</button>
+                        </form>
+                    </div>
+                    <div class="form-container sign-in-container">
+                        <form action="#">
+                            <h1>登入</h1>
+                            <input type="email" placeholder="Account" />
+                            <input type="password" placeholder="Password" />
+                            <button>登入</button>
+                        </form>
+                    </div>
+                    <div class="overlay-container">
+                        <div class="overlay">
+                            <div class="overlay-panel overlay-left">
+                                <h1>已註冊過</h1>
+                                <p>點擊以登入</p>
+                                <button class="ghost" id="signIn">登入</button>
+                            </div>
+                            <div class="overlay-panel overlay-right">
+                                <h1>尚未註冊</h1>
+                                <p>創建新帳戶</p>
+                                <button class="ghost" id="signUp">註冊</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          <!-- ========== JS語法 ========== -->
+          <!-- 導覽列 -->
+          <script src="javascript/h.js" charset="utf-8"></script>
+
+          <!--滑動頁面-->
+          <script>
+              let b1 = document.getElementById('b1');
+              let btt1 = document.getElementById('btt1');
+
+              window.addEventListener('scroll',function(){
+                  let value = window.scrollY;
+                  b1.style.top = value *1 + 'px';
+                  btt1.style.top = value *0.5 + 'px';
+              })
+          </script>
+          <!--幻燈片-->
+          <script>
+              var myIndex = 0;
+              carousel();
+
+              function carousel() {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              for (i = 0; i < x.length; i++) {
+                  x[i].style.display = "none";  
+              }
+              myIndex++;
+              if (myIndex > x.length) {myIndex = 1}    
+              x[myIndex-1].style.display = "block";  
+              setTimeout(carousel, 4000); // Change image every 2 seconds
+              }
+          </script>
+          <!-- 滑動特效 -->
+          <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+          <script>
+              AOS.init({duration:1000,once:true});
+          </script>
           </div>
         </div>
 
