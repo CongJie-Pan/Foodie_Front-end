@@ -3,59 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>購物車</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Quantity Increment/Decrement</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .cp2 {
+            display: flex;
+            align-items: center;
+        }
+        .cp2 input[type="button"] {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+        }
+        .cp2 input[type="text"] {
+            width: 50px;
+            height: 30px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
-        <h2>購物車</h2>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>商品名稱</th>
-                    <th>價格</th>
-                    <th>數量</th>
-                    <th>小計</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>商品1</td>
-                    <td>$3.95</td>
-                    <td>
-                        <div class="input-group">
-                            <button id="min" class="btn btn-outline-secondary" type="button">-</button>
-                            <input id="quantity" type="text" class="form-control text-center" value="1" readonly>
-                            <button id="add" class="btn btn-outline-secondary" type="button">+</button>
-                        </div>
-                    </td>
-                    <td id="total">$3.95</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="cp2"> <!-- 數量增減 -->
+            <input id="min" type="button" value="&minus;" />
+            <input id="quantity" type="text" value="1" />
+            <input id="add" type="button" value="+" />
+        </div>
+        <p>Total: $<span id="total">3.95</span></p>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function() {
             var t = $("#quantity");
-            $("#add").click(function(){
-                t.val(parseInt(t.val()) + 1);
-                $("#min").removeAttr("disabled");
+            function setTotal() {
+                var total = (parseInt(t.val()) * 3.95).toFixed(2);
+                $("#total").text(total);
+            }
+            setTotal();
+
+            $("#add").click(function() {
+                var currentVal = parseInt(t.val());
+                t.val(currentVal + 1);
+                $("#min").prop("disabled", false);
                 setTotal();
             });
-            $("#min").click(function(){
-                if (parseInt(t.val()) > 1) {
-                    t.val(parseInt(t.val()) - 1);
-                } else {
-                    $("#min").attr("disabled", "disabled");
+
+            $("#min").click(function() {
+                var currentVal = parseInt(t.val());
+                if (currentVal > 1) {
+                    t.val(currentVal - 1);
+                    if (currentVal - 1 === 1) {
+                        $(this).prop("disabled", true);
+                    }
                 }
                 setTotal();
             });
-            function setTotal(){
-                $("#total").html("$" + (parseInt(t.val()) * 3.95).toFixed(2));
+
+            if (parseInt(t.val()) === 1) {
+                $("#min").prop("disabled", true);
             }
-            setTotal();
         });
     </script>
 </body>

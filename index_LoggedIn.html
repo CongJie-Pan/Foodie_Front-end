@@ -102,72 +102,121 @@
 
             <!-- 購物車 -->
             <div id="cart">
+
               <!-- 購物車按鈕 --> 
-              
                 <button onclick="openNav()".style.display='block' type="button" class="btn btn-light" style="width: auto;height:auto;">
                     <i class="fa fa-shopping-cart" aria-hidden="true" style="font-size: 22px;"></i>
                 </button>
               
+              <!-- 旁邊顯示之購物車界面 -->
               <div id="mySidebar" class="sidebar">
+
+                  <!-- 購物車頁面右邊之大叉叉-->
                   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
                   <div class="sidebarinner">
+
                       <form action="">
+
                           <div class="cart-p">
-                              <img src="img/c1.png">
+                              <img src="picture/material/productPic/snacks/snacks_2.PNG">
+                              <div>
+
+                                  <div class="cp1">   <!--商品名稱-->
+                                      <h1>GEMEZ Enaak 韓式小雞麵 雞汁味</h1>
+                                      <p>一盒裝 24入</p>
+                                  </div>
+
+                                  <div class="cp2">   <!-- 數量增減 -->
+                                    <input id="min" type="button" value="&minus;"/> <!-- ' &minus; '是減號 -->
+                                    <input id="quantity" type="text" value="1"/>
+                                    <input id="add" type="button" value="+"/> 
+                                  </div>
+                              </div>
+
+                              <div class="cp3">   <!-- 商品價格 -->
+                                  <p>$239</p>
+                              </div>
+
+                              <button>&times;</button>    <!-- 刪除商品按鈕 '&times;'是叉叉符號 -->
+
+                          </div>
+
+                          <div class="cart-p">
+
+                              <img src="picture/material/productPic/drinks/banana.jpg">
                               <div>
                                   <div class="cp1">   <!--商品名稱-->
-                                      <h1>CANON</h1>
-                                      <p>New Canonet 28</p>
+                                      <h1>【韓味不二】香蕉牛奶</h1>
+                                      <p>一瓶(200ml)</p>
                                   </div>
                                   <div class="cp2">   <!-- 數量增減 -->
-                                      <input id="min" type="button" value="&minus;"/>
+                                      <input id="min" type="button" value="&minus;"/> <!-- ' &minus; '是減號 -->
                                       <input id="quantity" type="text" value="1"/>
-                                      <input id="add" type="button" value="+"/> <!-- ' &minus; '是減號 -->
+                                      <input id="add" type="button" value="+"/> 
                                   </div>
                               </div>
+
                               <div class="cp3">   <!-- 商品價格 -->
-                                  <p>$5580</p>
+                                  <p>$25</p>
                               </div>
+
                               <button>&times;</button>    <!-- 刪除商品按鈕 '&times;'是叉叉符號 -->
+
                           </div>
+
                           <div class="cart-p">
-                              <img src="img/f2.png">
-                              <div>
-                                  <div class="cp1">   <!--商品名稱-->
-                                      <h1>KODAK</h1>
-                                      <p>Tri-X 400</p>
-                                  </div>
-                                  <div class="cp2">   <!-- 數量增減 -->
-                                      <input id="min" type="button" value="&minus;"/>
-                                      <input id="quantity" type="text" value="1"/>
-                                      <input id="add" type="button" value="+"/> <!-- ' &minus; '是減號 -->
-                                  </div>
-                              </div>
-                              <div class="cp3">   <!-- 商品價格 -->
-                                  <p>$340</p>
-                              </div>
-                              <button>&times;</button>    <!-- 刪除商品按鈕 '&times;'是叉叉符號 -->
-                          </div>
-                          
+
+                            <img src="picture/material/productPic/drinks/banana.jpg">
+                            <div>
+                                <div class="cp1">   <!--商品名稱-->
+                                    <h1>【韓味不二】香蕉牛奶</h1>
+                                    <p>一瓶(200ml)</p>
+                                </div>
+                                <div class="cp2">   <!-- 數量增減 -->
+                                    <input id="min" type="button" value="&minus;"/> <!-- ' &minus; '是減號 -->
+                                    <input id="quantity" type="text" value="1"/>
+                                    <input id="add" type="button" value="+"/> 
+                                </div>
+                            </div>
+
+                            <div class="cp3">   <!-- 商品價格 -->
+                                <p>$25</p>
+                            </div>
+
+                            <button>&times;</button>    <!-- 刪除商品按鈕 '&times;'是叉叉符號 -->
+
+                        </div>
                           
                           <!-- 計算總價 -->
                           <div class="cart-total">
                               <p>總金額<p>
-                              <p class="r">$5920</p>
+                              <p class="r">$264</p>
                           </div>
-                          <div class="cart-but">
-                              <input type="button" value="繼續購物" onclick="location.href='shop.html'">
-                              <input type="button" value="買單去" class="p-check" onclick="location.href='checkout.html'">
+
+                          <!-- 購物車選擇按鈕 (繼續購物/結帳)-->
+                          <div class="cart-but row" >
+
+                              <div class="col">
+                                <input type="button" value="繼續購物" class="Continu_OR_Checkout_Btn" onclick="location.href='shop.html'">
+                              </div>
+                              <div class="col">
+                                <input type="button" value="買單去" class="Continu_OR_Checkout_Btn" onclick="location.href='checkout.html'">
+                              </div>
+
                           </div>
+
                       </form>
+
                   </div>
+
               </div>
 
             </div>
             <!-- 會員註冊登入按鈕 -->
             <button onclick="document.getElementById('id01').style.display='block'" type="button" class="btn btn-light" style="width: auto;height:auto;font-weight: bold;margin-left:10px;">
-              <i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size: 22px;"></i>
-              OOO 您好！
+              <i class="fa fa-user" aria-hidden="true" style="font-size: 22px;margin-right: 5px;"></i>
+               OOO 您好！
             </button>
 
             <!-- 購物車所需js檔 -->
