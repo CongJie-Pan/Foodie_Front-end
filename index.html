@@ -61,12 +61,16 @@
         <!-- 工具欄第一欄內容物容器 -->
         <div class="row navOneRow">
 
-          <!-- 圖標logo-->
-          <div class="col-sm navLogoCol" >
-            <div class="navLogo" >
-              <img src="/picture/material/navPic/navLogo.png" alt="navLogoPic">
+            <!-- 圖標logo-->
+            <div class="col-sm navLogoCol" >
+              <div class="navLogo" >
+                <!-- Logo 點擊回到主頁 -->
+                <a href="/index.html">
+                <img src="/picture/material/navPic/navLogo.png" alt="navLogoPic">
+                </a>
+              </div>
             </div>
-          </div>
+          
 
           <!-- 搜尋欄 -->
           <div class="col-sm searchBarCol">
@@ -92,8 +96,14 @@
           <div class="col-sm BuyCart_and_Account" style="padding-left: 20px;">
 
             <!-- 購物車按鈕 --> 
-            <button type="button" class="btn btn-light" style="width: auto;height:auto;">
+            <!-- 未登入前統一先要求登入後再購物 -->
+            <button type="button" class="btn btn-light" style="width: auto;height:auto;" onclick="showAlert()">
               <i class="fa fa-shopping-cart" aria-hidden="true" style="font-size: 22px;"></i>
+              <script>
+                function showAlert() {
+                  alert("🔔 購買前請先登入！🔔");
+                }
+              </script>
             </button>
             
             <!-- 會員註冊登入按鈕 -->
@@ -109,17 +119,20 @@
 
                     <div class="form-container sign-up-container">
 
+                        <!-- 註冊頁面 -->
                         <form action="#">
                             <h1 style="color: #281805;font-weight: 900; bolder;padding-bottom: 15px;font-weight: 800;">註冊新會員</h1>
+                            <input type="text" style="color: #66625e;font-weight: 800;background-color: #eaeaea;" placeholder="姓名" />
+                            <input type="number" style="color: #66625e;font-weight: 800;background-color: #eaeaea;" placeholder="電話" />
                             <input type="email" style="color: #66625e;font-weight: 800;background-color: #eaeaea;" placeholder="電子郵件" />
                             <input type="password" style="color: #66625e;font-weight: 800;background-color: #eaeaea;" placeholder="密碼" />
-                            <input type="password" style="color: #66625e;font-weight: 800;background-color: #eaeaea;" placeholder="確認密碼" />
                             <button style="background-color: #a59e94;color: #ffffff;border: 0px;">註冊</button>
                         </form>
                     </div>
                     
                     <div class="form-container sign-in-container">
 
+                        <!-- 登入頁面 -->
                         <form action="#">
                             <h1 style="color: #281805;font-weight: 900; bolder;padding-bottom: 15px;">登入</h1>
                             <input type="email" style="color: #66625e;font-weight: 800;background-color: #eaeaea;" placeholder="電子郵件" />
@@ -129,7 +142,7 @@
 
                     </div>
 
-                    <!-- 提示轉換登入與註冊介面 -->
+                    <!-- 轉換登入與註冊"文字提示" -->
                     <div class="overlay-container">
 
                         <div class="overlay">
@@ -530,7 +543,7 @@
             
             <div class="card-body">
               <h5 class="card-title" style="font-weight:900;color: black;font-size: 25px;">點心輕食</h5>
-              <p class="card-text" style="color: #535758;font-size: large;">不飢不餓，但還是想買足口腹之慾？這裡有各類點心輕食提供給你。</p>
+              <p class="card-text" style="color: #535758;font-size: large;">不飢不餓，但還是想滿足口腹之慾？這裡有各類點心輕食提供給你。</p>
               
               <!-- 了解更多按鈕 -->
               <a href="#" class="btn btn-primary" style="background-color: #000000;color: rgb(244, 244, 244);font-size: 16px;border: 0px;">了解更多</a>
