@@ -58,26 +58,24 @@
     <!-- 上方欄位 (工具欄)
     ================================================== -->
 
-    <!-- 先為code寫上註解 不要急著修改-->
-
       <!-- 共具欄第一欄 -->
       <nav class="navbar navbar-expand-lg"> 
 
         <!-- 工具欄第一欄內容物容器 -->
         <div class="row navOneRow">
 
-            <!-- 圖標logo-->
-            <div class="col-sm navLogoCol" >
-              <div class="navLogo" >
-                <!-- Logo 點擊回到登入後主頁 -->
-                <a href="/index_LoggedIn.html">
-                <img src="/picture/material/navPic/navLogo.png" alt="navLogoPic">
-                </a>
-              </div>
+          <!-- 【圖標logo】-->
+          <div class="col-sm navLogoCol" >
+            <div class="navLogo" >
+              <!-- Logo 點擊回到登入後主頁 -->
+              <a href="/index_LoggedIn.html">
+              <img src="/picture/material/navPic/navLogo.png" alt="navLogoPic">
+              </a>
             </div>
+          </div>
           
 
-          <!-- 搜尋欄 -->
+          <!-- 【搜尋欄】 -->
           <div class="col-sm searchBarCol">
               
               <form class="d-flex" style="width:750px;"> 
@@ -100,7 +98,7 @@
           <!-- 右側兩個按鈕欄位 -->
           <div class="col-sm BuyCart_and_Account" style="padding-left: 20px;">
 
-            <!-- 購物車 -->
+            <!-- 【購物車】 -->
             <div id="cart">
 
               <!-- 購物車按鈕 --> 
@@ -118,6 +116,7 @@
 
                       <form action="">
 
+                          <!-- 購物車商品之單頁 商品01 -->
                           <div class="cart-p">
                               <img src="picture/material/productPic/snacks/snacks_2.PNG">
                               <div>
@@ -142,6 +141,7 @@
 
                           </div>
 
+                          <!-- 購物車商品之單頁 商品02 -->
                           <div class="cart-p">
 
                               <img src="picture/material/productPic/drinks/banana.jpg">
@@ -165,6 +165,7 @@
 
                           </div>
 
+                          <!-- 購物車商品之單頁 商品03 -->
                           <div class="cart-p">
 
                             <img src="picture/material/productPic/drinks/banana.jpg">
@@ -188,23 +189,23 @@
 
                         </div>
                           
-                          <!-- 計算總價 -->
-                          <div class="cart-total">
-                              <p>總金額<p>
-                              <p class="r">$264</p>
-                          </div>
+                        <!-- 計算總價 -->
+                        <div class="cart-total">
+                            <p>總金額<p>
+                            <p class="r">$264</p>
+                        </div>
 
-                          <!-- 購物車選擇按鈕 (繼續購物/結帳)-->
-                          <div class="cart-but row" >
+                        <!-- 購物車最後按鈕 (繼續購物/結帳去)-->
+                        <div class="cart-but row" >
 
-                              <div class="col">
-                                <input type="button" value="繼續購物" class="Continu_OR_Checkout_Btn" onclick="location.href='shop.html'">
-                              </div>
-                              <div class="col">
-                                <input type="button" value="買單去" class="Continu_OR_Checkout_Btn" onclick="location.href='checkout.html'">
-                              </div>
+                            <div class="col">
+                              <input type="button" value="繼續購物" class="Continu_OR_Checkout_Btn" onclick="location.href='shop.html'">
+                            </div>
+                            <div class="col">
+                              <input type="button" value="買單去" class="Continu_OR_Checkout_Btn" onclick="location.href='checkout.html'">
+                            </div>
 
-                          </div>
+                        </div>
 
                       </form>
 
@@ -213,8 +214,11 @@
               </div>
 
             </div>
-            <!-- 會員註冊登入按鈕 -->
-            <button onclick="document.getElementById('id01').style.display='block'" type="button" class="btn btn-light" style="width: auto;height:auto;font-weight: bold;margin-left:10px;">
+
+            <!-- 【會員註冊登入】 -->
+
+            <!-- 會員註冊與登入按鈕 -->
+            <button onclick="location.href='memberPage.html'" type="button" class="btn btn-light" style="width: auto;height:auto;font-weight: bold;margin-left:10px;">
               <i class="fa fa-user" aria-hidden="true" style="font-size: 22px;margin-right: 5px;"></i>
                OOO 您好！
             </button>
@@ -223,6 +227,7 @@
             <script src="javascript/h.js" charset="utf-8"></script>
 
           </div>
+
         </div>
 
         
@@ -239,6 +244,7 @@
           <!-- 下拉式選單 -->
           <div class="collapse navbar-collapse justify-content-md-center navCol-2" id="navbarsExample08"> 
 
+            <!-- 【商品瀏覽】 -->
             <li class="nav-item dropdown">
               <a class="nav-link " href="#" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 20px;color: #6e573a;font-weight: 1000;font-size: 18px;">商品瀏覽</a>
               <ul class="dropdown-menu">
@@ -249,6 +255,7 @@
               </ul>
             </li>
 
+            <!-- 【關於我們】 -->
             <li class="nav-item dropdown">
               <a class="nav-link " href="#" data-bs-toggle="dropdown" aria-expanded="flase" style="padding: 20px;color: #6e573a;font-weight: 1000;font-size: 18px;">關於我們</a>
               <ul class="dropdown-menu">
@@ -257,6 +264,7 @@
               </ul>
             </li>
 
+            <!-- 【聯絡我們】 -->
             <li class="nav-item dropdown">
               <a class="nav-link" href="#FooterArea"  aria-expanded="false" style="padding: 20px;color: #6e573a;font-weight: 1000;font-size: 18px;">聯絡我們</a>
             </li>
