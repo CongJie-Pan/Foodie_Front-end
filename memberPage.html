@@ -226,8 +226,6 @@
                OOO 您好！
             </button>
 
-            
-
             <!-- 購物車所需js檔 -->
             <script src="javascript/h.js" charset="utf-8"></script>
 
@@ -280,108 +278,156 @@
       </nav>
 
    
-      <div class="s1">
+    <!-- 個人資料頁面大容器 -->
+    <div class="mt-5 PersonalInfo_Container">
 
-        <div class="container2">
+        <div class="row">
 
-            <div class="content">
+            <!-- 上方選單容器 -->
+            <div class="col-12 CategoryList_Container">
+                
+                <!-- 上側選單 -->
 
-                <!-- 左側大選單之背後選擇器 -->
-                <img src="" alt="">
-                <input type="radio" name="slider" checked id="modify">
-                <input type="radio" name="slider" id="record">
-            
-                <!-- 左側大選單 -->
                 <div class="list">
-                    <label for="modify" class="modify">
-                    <span class="title">個人資料</span>
+                    <label for="modify" class="btn btn-secondary modify">
+                        <span class="title">基本資料</span>
                     </label>
-                    <label for="record" class="record">
-                    <span class="title">訂單記錄</span>
+                    <label for="record" class="btn btn-secondary record">
+                        <span class="title">訂單記錄</span>
                     </label>
-                    <div class="slider"></div>
                 </div>
 
-                <div class="text-content">
-                    <div class="modify text">
-                        <div class="rr">
-                            <div class="info">
-                                <p>個人資料</p>
-                                <form action="">
-                                    <div class="mod-txt">
-                                        <input type="text" name="" id="" placeholder="Name" value="卡比獸">     <!--抓個人資料填入value內-->
-                                        <input type="text" name="" id="" placeholder="Gender" value="">
-                                        <input type="text" name="" id="" placeholder="Phone" value="">
-                                        <input type="text" name="" id="" placeholder="Email" value="abcabc@gmail.com">
-                                        <input type="text" name="" id="" placeholder="Address" value="">
+            </div>
+
+            <!-- 下方個人資料顯示區容器 -->
+            <div class="col-12 PersonalAndOrder_Container">
+
+                <!-- 個人資料與訂單資料顯示區-->
+                <div class="container2">
+
+                    <div class="content">
+
+                        <img src="" alt="">
+                        <input type="radio"  name="slider" id="modify" autocomplete="off" checked>
+                        <input type="radio"  name="slider"  id="record" autocomplete="off">
+
+                        <!-- 個人資料與訂單資料顯示區 - 字區域 -->
+                        <div class="text-content">
+
+                            <div class="modify text">
+
+                                <div class="rr">
+
+                                    <div class="info">
+                                        <p style="color: #6e573a;font-weight: 1000;font-size: 20px; text-align: center;">基本資料</p>
+                                        <form action="">
+                                            <div class="mod-txt">
+                                                <input type="text" name="" id="AccountName" placeholder="Name" value="酷奇">
+                                                <input type="text" name="" id="AccountPhone" placeholder="Phone" value="0989524655">
+                                                <input type="date" name="birthday" id="AccountBirthday" placeholder="生日" value="" style="color: black;">
+                                                <input type="text" name="" id="AccountAddress" placeholder="地址：320桃園市中壢區中北路200號" value="">
+                                            </div>
+                                            <input type="submit" value="更新資料" class="p-sub">
+                                        </form>
                                     </div>
-                                    <input type="submit" value="UPDATE" class="p-sub">
-                                </form>
-                            </div>
-                            <div class="acc">
-                                <p>帳號密碼</p>
-                                <form action="">
-                                    <div class="mod-txt">
-                                        <input type="text" name="" id="" placeholder="Account" value="abcabc">    <!--抓個人資料填入value內-->
-                                        <input type="text" name="" id="" placeholder="Password" value="**********">
+
+                                    <div class="acc" >
+                                        <p style="color: #6e573a;font-weight: 1000;font-size: 20px; text-align: center;">帳號密碼</p>
+                                        <form action="">
+                                            <div class="mod-txt">
+                                                <input type="text" name="" id="" placeholder="Email" value="abcabc@gmail.com">
+                                                <input type="text" name="" id="" placeholder="Password" value="*****">
+                                            </div>
+                                            <input type="submit" value="更新資料" class="p-sub">
+                                        </form>
+                                        <h2 style="color: #6e573a;font-weight: 800;font-size: 16px;">*修改資料直接填入輸入格即可。*</h2>
                                     </div>
-                                    <input type="submit" value="UPDATE" class="p-sub">
-                                </form>
-                                <h2>*如需修改資料請直接填入輸入格*</h2>
+
+                                </div>
+
                             </div>
+
+                            <div class="record text" style="color: #6e573a;">
+
+                                <table class="r-table">
+                                    <tr>
+                                        <th>訂單編號</th>
+                                        <th class="dis">訂單日期</th>
+                                        <th>品名</th>
+                                        <th>數量</th>
+                                        <th>合計</th>
+                                        <th class="dis">備註</th>
+                                        <th class="dis">訂單狀態</th>
+                                    </tr>
+                                    <tr>
+                                        <td>A20240510</td>
+                                        <td class="dis">2024/05/10</td>
+                                        <td><span>No Brand<br>經典炸醬拉麵 135g克 x 5 x 1PC包</span></td>
+                                        <td>1</td>
+                                        <td>$179</td>
+                                        <td class="dis">無</td>
+                                        <td class="dis">已完成</td>
+                                    </tr>
+                                    <tr>
+                                        <td>A20240510</td>
+                                        <td class="dis">2024/05/10</td>
+                                        <td><span>OTTOGI<br>不倒翁 粗麵條版Q拉麵</span></td>
+                                        <td>1</td>
+                                        <td>$225</td>
+                                        <td class="dis">無</td>
+                                        <td class="dis">已完成</td>
+                                    </tr>
+                                    <tr>
+                                        <td>A20240524</td>
+                                        <td class="dis">2024/05/24</td>
+                                        <td><span>SAMYANG<br>三養 4種起司風味火辣雞肉風味鐵板炒麵</span></td>
+                                        <td>1</td>
+                                        <td>$150</td>
+                                        <td class="dis">無</td>
+                                        <td class="dis">已完成</td>
+                                    </tr>
+
+                                </table>
+
+                            </div>
+
                         </div>
                     </div>
-                    <div class="record text">
-                        <table class="r-table">
-                            <tr>
-                                <th>訂單編號</th>
-                                <th class="dis">訂單日期</th>
-                                <th>品名</th>
-                                <th>數量</th>
-                                <th>合計</th>
-                                <th class="dis">備註</th>
-                                <th class="dis">訂單狀態</th>
-                            </tr>
-                            <tr>
-                                <td>A20200526</td>
-                                <td class="dis">2021/05/26</td>	
-                                <td><span>CONON<br>New Canonet 28</span></td>   <!--br前是抓品牌 br後是抓品名-->
-                                <td>1</td>
-                                <td>$2000</td>
-                                <td class="dis">無</td>
-                                <td class="dis">已完成</td>
-                            </tr>
-                            <tr>
-                                <td>A20200526</td>
-                                <td class="dis">2021/05/26</td>	
-                                <td><span>KODAK<br>Tri-X 400</span></td>
-                                <td>1</td>
-                                <td>$2000</td>
-                                <td class="dis">無</td>
-                                <td class="dis">已完成</td>
-                            </tr>
-                            <tr>
-                                <td>A20200524</td>
-                                <td class="dis">2021/05/24</td>	
-                                <td><span>KONICA<br>Genba Kantoku 28WB</span></td>
-                                <td>1</td>
-                                <td>$2000</td>
-                                <td class="dis">無</td>
-                                <td class="dis">已完成</td>
-                            </tr>
-                        </table>
-                    </div>
                 </div>
+                
             </div>
         </div>
-
-      </div>
+    </div>
       
 
       <!-- 頁尾(含聯絡資訊) 
       ================================================== -->
 
-      <section id="FooterArea" class="Footer container " style="background-color: #e6e6e6; width: 100%;color: #796146;">
+      <section id="FooterArea" class="Footer border-top container " style="background-color: #e6e6e6; width: 100%;color: #796146;">
+
+        <footer class="py-5">
+
+          <div class="row" style="display: flex; align-items: center;">
+            <div class="col">
+                <h5 style="font-size: 22px;font-weight: 1000;margin-bottom: 20px;">聯絡資訊</h5>
+                <ul style="font-size: 17px;font-weight: 500">
+                    <li style="margin-bottom: 10px;">客服專線：(03)26599</li>
+                    <li style="margin-bottom: 10px;">客服時間：09:00-18:00</li>
+                    <li style="margin-bottom: 10px;">信箱 : foodie@gmail.com</li>
+                    <li>地址：320桃園市中壢區中北路200號<br>(中原大學資訊管理學系)</li>
+                </ul>
+            </div>
+        
+            <div class="col">
+                <div class="MapArea">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.266894455652!2d121.24097727482966!3d24.957032541387473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346822143c046009%3A0x63e3ef21e3beebac!2z6LOH6KiK566h55CG5a2457O7!5e0!3m2!1szh-TW!2stw!4v1715502788841!5m2!1szh-TW!2stw" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+            </div>
+      
+        </footer>
 
         <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top ">
 

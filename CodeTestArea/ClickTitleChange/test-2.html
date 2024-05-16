@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify and Record</title>
+    <style>
+        /* 初始样式 */
+        .modify,
+        .record {
+            background-color: #ada090;
+            margin-right: 25px;
+            border-radius: 20px;
+            border: 0px;
+            cursor: pointer; /* 将鼠标光标改为手型 */
+            transition: background-color 0.3s; /* 添加过渡效果 */
+        }
+
+        .modify .title,
+        .record .title {
+            color: #fff;
+            font-weight: 800;
+        }
+
+        /* 当radio被选中时的样式 */
+        #modify:checked + .modify,
+        #record:checked + .record {
+            background-color: #393939;
+            color: #bcbcbc;
+        }
+    </style>
+</head>
+<body>
+    <!-- Radio inputs -->
+    <input type="radio" id="modify" name="options" />
+    <input type="radio" id="record" name="options" />
+
+    <!-- Labels -->
+    <label for="modify" class="modify">
+        <span class="title">Modify</span>
+    </label>
+    <label for="record" class="record">
+        <span class="title">Record</span>
+    </label>
+</body>
+</html>
