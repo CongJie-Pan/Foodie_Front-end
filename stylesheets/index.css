@@ -30,6 +30,15 @@
   html {
     scroll-behavior: smooth;
   }
+
+  .separator_Footer{ /* 基本分隔線設定 */
+  
+    border-top: 1px solid #7b7b7b; /* 黑色分隔線，1px 寬度 */
+    width: 1300px; /* 線長度 */
+    margin: 30px auto;  /* 與其他元素間距增大，中間對齊 */
+    /*box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* 添加陰影效果 */
+  
+  }
   
   /* 上方欄位 (工具欄)
   -------------------------------------------------- */
@@ -148,7 +157,7 @@
   
   /* Declare heights because of positioning of img element */
   .carousel-item {
-    height: 32rem; /*32*/
+    height: 38rem; /*32*/
   }
   
   .bd-placeholder-img {
