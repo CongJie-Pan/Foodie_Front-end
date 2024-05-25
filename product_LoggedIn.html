@@ -131,7 +131,7 @@
 
                                   <div class="cp2" data-min="1" data-max="50"> <!-- 數量增減 min最小購買數量、max最大購買數量 -->
                                     <input class="min" type="button" value="&minus;"/> <!-- ' &minus; '是減號 -->
-                                    <input class="quantity" type="text" value="1"/>
+                                    <input class="BuyCart_quantity" type="text" value="1"/>
                                     <input class="add" type="button" value="+"/> 
                                   </div>
                             
@@ -156,7 +156,7 @@
                                   </div>
                                   <div class="cp2" data-min="1" data-max="50"> <!-- 數量增減 min最小購買數量、max最大購買數量 -->
                                     <input class="min" type="button" value="&minus;"/> <!-- ' &minus; '是減號 -->
-                                    <input class="quantity" type="text" value="1"/>
+                                    <input class="BuyCart_quantity" type="text" value="1"/>
                                     <input class="add" type="button" value="+"/> 
                                 </div>                            
                               </div>
@@ -180,7 +180,7 @@
                                 </div>
                                 <div class="cp2" data-min="1" data-max="50"> <!-- 數量增減 min最小購買數量、max最大購買數量 -->
                                   <input class="min" type="button" value="&minus;"/> <!-- ' &minus; '是減號 -->
-                                  <input class="quantity" type="text" value="1"/>
+                                  <input class="BuyCart_quantity" type="text" value="1"/>
                                   <input class="add" type="button" value="+"/> 
                               </div>
                             </div>
@@ -199,7 +199,7 @@
                               document.body.addEventListener('click', function(event) {
                                   if (event.target.classList.contains('min') || event.target.classList.contains('add')) {
                                       const cp2 = event.target.closest('.cp2');
-                                      const quantityInput = cp2.querySelector('.quantity');
+                                      const quantityInput = cp2.querySelector('.BuyCart_quantity');
                                       let currentValue = parseInt(quantityInput.value);
                       
                                       const min = parseInt(cp2.getAttribute('data-min'));
@@ -216,12 +216,12 @@
                               });
                       
                               // 避免非數值資料輸入進數量欄位
-                              document.querySelectorAll('.quantity').forEach(input => {
+                              document.querySelectorAll('.BuyCart_quantity').forEach(input => {
                                   input.addEventListener('input', function() {
                                       let value = this.value.replace(/[^0-9]/g, '');
                                       const cp2 = this.closest('.cp2');
                                       const max = parseInt(cp2.getAttribute('data-max'));
-
+                      
                                       // 數量欄位限制購買數量，當輸入超過最大數量，則予以提醒。
                                       if (value > max) {
                                           alert(`最多只能購買 ${max} 個`);
@@ -495,7 +495,7 @@
 
             <label for="fname">姓名</label><br>
 
-            <input type="text" id="fname" name="fname"><br>
+            <input type="text" id="fname" name="fname" class="CommentNameInput"><br>
 
             <p>留言</p>
             <textarea name="message" rows="10" cols="30" style="height: 200px;resize: none; "></textarea>

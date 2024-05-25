@@ -27,6 +27,42 @@ body {
 html {
     scroll-behavior: smooth;
 }
+/* 滑動至頂部按鈕 
+----------------------- */
+.slider {
+    position: fixed; /* 固定位置 */
+    bottom: 40px; /* 距離底部 40px */
+    right: 27px; /* 距離右邊 27px */
+    width: 50px;
+    height: 50px;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* 保證在最上層 */
+}
+
+.top {
+    width: 42px;
+    height: 42px;
+    color: rgb(172, 186, 198);
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top:hover {
+    font-size: 60px;
+    bottom: 35px; 
+    right: 22px;
+    width: 70px;
+    height: 70px;
+    transition: 0.3s;
+    color: #333333;
+}
 
 /* 上方欄位 (工具欄) 
 -------------------------------------------------- */
@@ -232,9 +268,7 @@ html {
     padding: 2px 0;
 }
 
-.quantityButton [type="text"] {
-    width: 225px;
-}
+
 
 .quantityButton [type="button"] {
     width: 30px;
@@ -375,8 +409,21 @@ form p {
     color: #7c6a54cd;
 }
 
-form input[type="text"],
 form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #7c6a54cd; /* 調整邊框顏色 */
+    border-radius: 5px;
+    font-size: 16px;
+    color: #533008; /* 調整文字顏色 */
+    background-color: #f9f9f9; /* 調整背景顏色 */
+    box-sizing: border-box;
+    margin-bottom: 0;
+}
+
+/* 左方評論區，名字部分 */
+/*專門設立一個class的原因在於不使購物車相同的text輸入框，會有一樣的樣式*/
+.CommentNameInput{
     width: 100%;
     padding: 10px;
     border: 1px solid #7c6a54cd; /* 調整邊框顏色 */
@@ -482,39 +529,4 @@ input[type="submit"]:hover {
     margin-right: 2px; /* 調整星星之間的間距 */
 }
 
-/* 滑動至頂部按鈕 
------------------------ */
-.slider {
-    position: fixed; /* 固定位置 */
-    bottom: 40px; /* 距離底部 40px */
-    right: 27px; /* 距離右邊 27px */
-    width: 50px;
-    height: 50px;
-    background: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* 保證在最上層 */
-}
 
-.top {
-    width: 42px;
-    height: 42px;
-    color: rgb(172, 186, 198);
-    transition: all 0.3s ease;
-    font-weight: 600;
-    font-size: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.top:hover {
-    font-size: 60px;
-    bottom: 35px; 
-    right: 22px;
-    width: 70px;
-    height: 70px;
-    transition: 0.3s;
-    color: #333333;
-}
