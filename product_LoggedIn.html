@@ -334,9 +334,9 @@
 
         <!-- 網頁當前路徑顯示 -->
         <div class="product-path">
-          <a href="index.html" class="path-link">首頁</a> &gt;
-          <a href="AllProduct.html" class="path-link">商品</a> &gt;
-          <a href="product.html" class="path-link">泡麵</a>
+          <a href="index_LoggedIn.html" class="path-link">首頁</a> &gt;
+          <a href="AllProduct_LoggedIn.html" class="path-link">商品</a> &gt;
+          <a href="product_LoggedIn.html" class="path-link">當前商品(名字)</a>
         </div>
 
         <!-- 商品基本內容顯示容器(標題、圖片、價格、數量、計數器、購買按鈕)-->
@@ -360,9 +360,9 @@
 
               <!-- 商品數量增減按鈕 -->
               <div class="quantityButton" data-min="1" data-max="30">   <!-- 數量增減 data-min最低數量;data-max 最多數量 -->
-                <input id="min" type="button" value="&minus;" class="min"/> <!-- ' &minus; '是減號 -->
-                <input id="quantity" type="text" value="1" class="quantity"/>
-                <input id="add" type="button" value="+" class="add"/>
+                <input type="button" value="&minus;" class="min"/> <!-- ' &minus; '是減號 -->
+                <input  type="text" value="1" class="quantity"/>
+                <input  type="button" value="+" class="add"/>
               </div>
 
               <!-- 商品購買按鈕容器 -->
@@ -370,21 +370,11 @@
 
                 <button type="button" class="btn" onclick="showAlert()">
                   加入購物車
-                  <script>
-                    function showAlert() {
-                      alert("🔔 購買前請先登入！🔔");
-                    }
-                  </script>
                 </button>
 
                 
-                <button type="button" class="btn" onclick="showAlert()">
+                <button type="button" class="btn" onclick=""> <!-- 導引至結帳區 -->
                   立即購買
-                  <script>
-                    function showAlert() {
-                      alert("🔔 購買前請先登入！🔔");
-                    }
-                  </script>
                 </button>
 
               </div>
@@ -646,6 +636,12 @@
       </section>
 
     <!-- Javascript 區域 -->
+    <script>
+      function showAlert() {
+        alert("✅ 已加入購物車！");
+      }
+    </script>
+
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <script async src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>
