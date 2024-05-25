@@ -40,6 +40,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
 
+    
     <!-- css 樣式檔案 -->
     <link href="stylesheets/product.css" rel="stylesheet">
 
@@ -221,10 +222,10 @@
             <li class="nav-item dropdown">
               <a class="nav-link " href="#" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 20px;color: #6e573a;font-weight: 1000;font-size: 18px;">商品瀏覽</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">所有商品</a></li>
-                <li><a class="dropdown-item" href="#">泡麵</a></li>
-                <li><a class="dropdown-item" href="#">飲料</a></li>
-                <li><a class="dropdown-item" href="#">零食糖果</a></li>
+                <li><a class="dropdown-item" href="AllProduct_LoggedIn.html">所有商品</a></li>
+                <li><a class="dropdown-item" href="AllProduct_LoggedIn.html#noodle">泡麵</a></li>
+                <li><a class="dropdown-item" href="AllProduct_LoggedIn.html#drinks">飲料</a></li>
+                <li><a class="dropdown-item" href="AllProduct_LoggedIn.html#snacks">零食糖果</a></li>
               </ul>
             </li>
 
@@ -246,44 +247,124 @@
       </nav>
 
    
-      <!-- 泡麵
+      <!-- 商品購買與介紹區域
       ================================================== -->
-      <!-- noodle #1 -->
-      <div class="desc-page">
+
+      <!-- 商品內容之大容器-->
+      <section class="desc-page">
+
+        <!-- 網頁當前路徑顯示 -->
         <div class="product-path">
           <a href="index.html" class="path-link">首頁</a> &gt;
           <a href="AllProduct.html" class="path-link">商品</a> &gt;
           <a href="product.html" class="path-link">泡麵</a>
         </div>
-        <section id="product1" class="display">
+
+        <!-- 商品基本內容顯示容器(標題、圖片、價格、數量、計數器、購買按鈕)-->
+        <div id="product1" class="display">
+
+          <!-- 商品圖片 -->
           <div class="cont-img">
               <img src="/picture/material/productPic/instant noodles/Instant_noodles_1.jpg" alt="">
           </div>
+
+          <!-- 商品之標題、價格、數量、計數器、購買按鈕顯示容器 -->
           <div class="cont">
+
+              <!-- 商品標題 -->
               <div class="cont-name">
                   <h5>Nongshim 農心 <br>韓國境內版 辛拉麵 5包</h5>
                   <h6>NT$239</h6>
                   <!-- 可自行更動數量設定 -->
                   <p>庫存數量：30</p>
               </div>
-              <!-- cart button -->
-              <div class="quantityButton">   <!-- 數量增減 -->
-                  <input id="min" type="button" value="&minus;"/> <!-- ' &minus; '是減號 -->
-                  <input id="quantity" type="text" value="1"/>
-                  <input id="add" type="button" value="+"/>
+
+              <!-- 商品數量增減按鈕 -->
+              <div class="quantityButton" data-min="1" data-max="30">   <!-- 數量增減 data-min最低數量;data-max 最多數量 -->
+                <input id="min" type="button" value="&minus;" class="min"/> <!-- ' &minus; '是減號 -->
+                <input id="quantity" type="text" value="1" class="quantity"/>
+                <input id="add" type="button" value="+" class="add"/>
               </div>
+
+              <!-- 商品購買按鈕容器 -->
               <div class="addToCart">
-                   <button>加入購物車</button>
-                   <button>立即購買</button>
+
+                <button type="button" class="btn" onclick="showAlert()">
+                  加入購物車
+                  <script>
+                    function showAlert() {
+                      alert("🔔 購買前請先登入！🔔");
+                    }
+                  </script>
+                </button>
+
+                
+                <button type="button" class="btn" onclick="showAlert()">
+                  立即購買
+                  <script>
+                    function showAlert() {
+                      alert("🔔 購買前請先登入！🔔");
+                    }
+                  </script>
+                </button>
+
               </div>
+
+              <!-- 購買數量增減控制 -->
+              <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    document.body.addEventListener('click', function(event) {
+                        if (event.target.classList.contains('min') || event.target.classList.contains('add')) {
+                            const quantityButton = event.target.closest('.quantityButton');
+                            const quantityInput = quantityButton.querySelector('.quantity');
+                            let currentValue = parseInt(quantityInput.value);
+                            
+                            const min = parseInt(quantityButton.getAttribute('data-min'));
+                            const max = parseInt(quantityButton.getAttribute('data-max'));
+
+                            if (event.target.classList.contains('min') && currentValue > min) {
+                                quantityInput.value = currentValue - 1;
+                            }
+
+                            if (event.target.classList.contains('add') && currentValue < max) {
+                                quantityInput.value = currentValue + 1;
+                            }
+                        }
+                    });
+
+                    // 避免非數值資料輸入進數量欄位
+                    document.querySelectorAll('.quantity').forEach(input => {
+                        input.addEventListener('input', function() {
+                            let value = this.value.replace(/[^0-9]/g, '');
+                            const quantityButton = this.closest('.quantityButton');
+                            const max = parseInt(quantityButton.getAttribute('data-max'));
+
+                            // 數量欄位限制購買數量，當輸入超過最大數量，則予以提醒。
+                            if (value > max) {
+                                alert(`最多只能購買 ${max} 個`);
+                                this.value = max;
+                            } else {
+                                this.value = value;
+                            }
+                        });
+                    });
+                });
+              </script>
+
           </div>
         
-        </section>
+        </div>
+
         <div class="separator"></div> <!-- 分隔線 -->
-        <!-- introduction description -------------- -->
+        
+        <!-- 商品介紹
+         ------------------------->
+
         <div class="introduction">
+
           <!-- 商品介紹 -->
           <h4> &#92;商品介紹&sol;</h4>
+
           <ul>
             <li>純正韓國風味辛湯頭</li>
             <li>搭配帶勁Q彈的麵條</li>
@@ -291,183 +372,161 @@
             <li>韓國家家戶戶必備的拉麵</li>
             <li>老饕們可以嘗試看看 &#x1F60B;</li>
           </ul>
+
           <br>
+
           <!-- 成分内容 -->
           <h4> &#92;成分内容&sol;</h4>
           <p>
             調味包: <br> 牛肉調味粉(牛肉萃取粉. 洋蔥.胡椒.醬油).鹽.辛辣調味粉 (玉米澱粉.辣椒萃取粉.果糖)醬油調味粉(大豆小麥.鹽.糖.胺基乙酸).糖.調味醬粉(玉米糖漿.麵粉.辣椒.糖.鹽).調味牛肉粉(鹽，糖 玉米澱粉.牛肉萃取粉.洋蔥.大蒜).醬油粉(大豆.麥芽糊精).胡椒粉.辣椒風味粉(辣椒，蒜.洋蔥).5-次黃瞟哈校音碳酸二鈉. 5-鳥瞟哈核音磷酸納.琥珀酸二鈉.大豆蛋白.乾燥食材乾 蔥.乾青江菜.乾香菇.乾胡蘿蔔.乾辣椒.牛肉(產地:澳洲)
           </p>
-        <br>
 
-        <!-- 過敏原資訊 -->
-        <h4> &#92;過敏原資訊&sol;</h4>
+          <br>
+
+          <!-- 過敏原資訊 -->
+          <h4> &#92;過敏原資訊&sol;</h4>
           <p>
             過敏原資訊：<br> 小麥粉.馬鈴薯澱粉.棕櫚 油.醋酸澱粉.碳酸鈣(蛋殼).鹽.蔬菜萃取液(香菇.蔥.薑.蘿蔔).碳酸鉀.碳酸鈉，檸檬酸.寡糖綠茶風味液(寡糖.綠茶萃取物).維生素B
-          <br> <br>
-          &#10056;注意:本產品含有含麩質之穀物、大豆、蛋殼鈣及其製品,不適合對其過敏體質者食用。
+            <br>
+            <br>
+            &#10056;注意:本產品含有含麩質之穀物、大豆、蛋殼鈣及其製品,不適合對其過敏體質者食用。
           </p>
-        <br>
+          <br>
 
-        <!-- 注意事項 -->
-        
+          <!-- 注意事項 -->
           <div class="notice">
             <iconify-icon icon="emojione:double-exclamation-mark"></iconify-icon>
             <h5>注意事項</h5>
             <iconify-icon icon="emojione:double-exclamation-mark"></iconify-icon>
           </div>
         
-        <h6>
-          &#128666;超商單筆限重為5公斤|宅配15公斤&#128230; <br><br>
-          &#128314;如購買多樣請務必留意重量及材積&#128314; <br><br>
-          &#128172;如有不清楚部分請透過店長客服詢問&#128587;
-        </h6>
-        </div>
+          <h6>
+            &#128666;超商單筆限重為5公斤|宅配15公斤&#128230; <br><br>
+            &#128314;如購買多樣請務必留意重量及材積&#128314; <br><br>
+            &#128172;如有不清楚部分請透過店長客服詢問&#128587;
+          </h6>
 
-      </div>
+          </div>
+
+        </div>
 
       <div class="separator"></div> <!-- 分隔線 -->
 
-      <!-- coment --------------------- -->
-      <div class="comment">
+      <!-- 商品留言評價區域
+      ================================================== -->
+
+      <section class="comment">
+
+        <!-- 左方填寫評論區域 -->
         <div class="leftside">
+
           <h5>留言評價</h5>
+
           <form action="#" method="post">
+
             <label for="fname">姓名</label><br>
+
             <input type="text" id="fname" name="fname"><br>
+
             <p>留言</p>
             <textarea name="message" rows="10" cols="30" style="height: 200px;resize: none; "></textarea>
             <br><br>
-            <!-- star -->
+
+            <!-- 星星評分部分 -->
             <div class="star" id="star-rating">
-              <iconify-icon
-              icon="ic:baseline-star"
-              width="40"
-              data-index="1"
-              class="star-icon"
-              ></iconify-icon>
-              <iconify-icon
-              icon="ic:baseline-star"
-              width="40"
-              data-index="2"
-              class="star-icon"
-              ></iconify-icon>
-              <iconify-icon
-              icon="ic:baseline-star"
-              width="40"
-              data-index="3"
-              class="star-icon"
-              ></iconify-icon>
-              <iconify-icon
-              icon="ic:baseline-star"
-              width="40"
-              data-index="4"
-              class="star-icon"
-              ></iconify-icon>
-              <iconify-icon
-              icon="ic:baseline-star"
-              width="40"
-              data-index="5"
-              class="star-icon"
-              ></iconify-icon>
-          </div>
+
+              <iconify-icon icon="ic:baseline-star" width="40" data-index="1" class="star-icon"></iconify-icon>
+              <iconify-icon icon="ic:baseline-star" width="40" data-index="2" class="star-icon"></iconify-icon>
+              <iconify-icon icon="ic:baseline-star" width="40" data-index="3" class="star-icon"></iconify-icon>
+              <iconify-icon icon="ic:baseline-star" width="40" data-index="4" class="star-icon"></iconify-icon>
+              <iconify-icon icon="ic:baseline-star" width="40" data-index="5" class="star-icon"></iconify-icon>
+              
+            </div>
+
             <input type="submit" value="送出">
+
           </form>
+
         </div>
         
+        <!-- 星星js程式部分 -->
         <script>
           document.addEventListener("DOMContentLoaded", function() {
             const starRatings = document.querySelectorAll(".star");
         
-            starRatings.forEach((starRating) => {
+              starRatings.forEach((starRating) => {
                 const starIcons = starRating.querySelectorAll(".star-icon");
         
-                starIcons.forEach((starIcon) => {
-                    starIcon.addEventListener("click", function() {
+                  starIcons.forEach((starIcon) => {
+                      starIcon.addEventListener("click", function() {
                         const clickedIndex = parseInt(this.getAttribute("data-index"));
         
-                        starIcons.forEach((icon, index) => {
-                            if (index < clickedIndex) {
-                                icon.setAttribute("icon", "ic:baseline-star");
-                                icon.classList.add("selected");
-                            } else {
-                                icon.setAttribute("icon", "ic:baseline-star");
-                                icon.classList.remove("selected");
-                            }
-                        });
+                          starIcons.forEach((icon, index) => {
+                              if (index < clickedIndex) {
+                                  icon.setAttribute("icon", "ic:baseline-star");
+                                  icon.classList.add("selected");
+                              } else {
+                                  icon.setAttribute("icon", "ic:baseline-star");
+                                  icon.classList.remove("selected");
+                              }
+                          });
         
                         console.log("Selected Rating: " + clickedIndex);
-                    });
-                });
-            });
-        });
-            </script>
+                      });
+                  });
+              });
+          });
+        </script>
         
+        <!-- 右方顯示評論區域 -->
         <div class="rightside">
+
           <h5>評論</h5>
+
+          <!-- 評論顯示盒 - 大容器 -->
           <div class="comment-box">
+
+            <!-- 評論顯示盒 小容器 -->
             <div class="box-top">
-              <iconify-icon icon="mingcute:user-4-fill" 
-              width="55"
-              style="font-size: 36px;"></iconify-icon> 
+
+              <!-- 用戶圖標 -->
+              <iconify-icon icon="mingcute:user-4-fill" width="55" style="font-size: 36px;"></iconify-icon>
+
               <h6>酷寄</h6>
+
+              <!-- 顯示評論之星星顯示區 -->
               <div class="starcomment" id="star-comment">
-                <iconify-icon
-                icon="ic:baseline-star"
-                width="20"
-                data-index="1"
-                class="stars"
-                style="font-size: 8px; color: gold;"
-                ></iconify-icon>
-                <iconify-icon
-                icon="ic:baseline-star"
-                width="20"
-                data-index="2"
-                class="stars"
-                style="font-size: 8px; color: gold;"
-                
-                ></iconify-icon>
-                <iconify-icon
-                icon="ic:baseline-star"
-                width="20"
-                data-index="3"
-                class="stars"
-                style="font-size: 8px; color: gold;"
-                ></iconify-icon>
-                <iconify-icon
-                icon="ic:baseline-star"
-                width="20"
-                data-index="4"
-                class="stars"
-                style="font-size: 8px;  color: gold;"
-                ></iconify-icon>
-                <iconify-icon
-                icon="ic:baseline-star"
-                width="20"
-                data-index="5"
-                class="stars"
-                style="font-size: 8px"
-                ></iconify-icon>
-            </div>
+
+                <iconify-icon icon="ic:baseline-star" width="25" data-index="1" class="stars" style="font-size: 15px; color: gold;"></iconify-icon>
+                <iconify-icon icon="ic:baseline-star" width="25" data-index="2" class="stars" style="font-size: 15px; color: gold;"></iconify-icon>
+                <iconify-icon icon="ic:baseline-star" width="25" data-index="3" class="stars" style="font-size: 15px; color: gold;"></iconify-icon>
+                <iconify-icon icon="ic:baseline-star" width="25" data-index="4" class="stars" style="font-size: 15px; color: gold;"></iconify-icon>
+                <iconify-icon icon="ic:baseline-star" width="25" data-index="5" class="stars" style="font-size: 15px; color: gold;"></iconify-icon>
+              
+              </div>
+
               <p>
                 辛拉麵麵條Q彈超好吃 !! ~~
               </p>
+
             </div>
 
           </div>
+
         </div>
           
-      </div>
-
-      <!-- slider up -->
-      <section class="slider">
-          <a href="#">
-            <div class="top">
-                <iconify-icon icon="iconoir:page-up"></iconify-icon>
-            </div>
-          </a>
       </section>
 
-      <!-- Copyright, 人數
+      <!-- 回到頂部按鈕 -->
+      <div class="slider">
+        <a href="#">
+          <div class="top">
+              <iconify-icon icon="iconoir:page-up"></iconify-icon>
+          </div>
+        </a>
+      </div>
+
+      <!-- Footer 尾頁
       ================================================== -->
       <section id="FooterArea" class="Footer border-top container " style="background-color: #ffffff; width: 100%;color: #796146;">
 
@@ -475,8 +534,8 @@
 
           <div class="row" style="display: flex; align-items: center;">
             <div class="col">
-                <h5 style="font-size: 22px;font-weight: 1000;margin-bottom: 20px;">聯絡資訊</h5>
-                <ul style="font-size: 17px;font-weight: 500">
+                <h5 style="font-size: 22px;font-weight: 1000;margin-bottom: 20px;padding-left: 180px;">聯絡資訊</h5>
+                <ul style="font-size: 17px;font-weight: 500;padding-left: 200px;">
                     <li style="margin-bottom: 10px;">客服專線：(03)26599</li>
                     <li style="margin-bottom: 10px;">客服時間：09:00-18:00</li>
                     <li style="margin-bottom: 10px;">信箱 : foodie@gmail.com</li>
@@ -506,10 +565,6 @@
         </div>
 
       </section>
-
-
-
-    
 
     <!-- Javascript 區域 -->
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>

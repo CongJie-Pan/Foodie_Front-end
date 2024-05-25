@@ -29,6 +29,43 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* 滑動至頂部按鈕 
+  ----------------------- */
+.slider {
+  position: fixed; /* 固定位置 */
+  bottom: 40px; /* 距離底部 40px */
+  right: 27px; /* 距離右邊 27px */
+  width: 50px;
+  height: 50px;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* 保證在最上層 */
+}
+
+.top {
+  width: 42px;
+  height: 42px;
+  color: rgb(172, 186, 198);
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top:hover {
+  font-size: 60px;
+  bottom: 35px; 
+  right: 22px;
+  width: 70px;
+  height: 70px;
+  transition: 0.3s;
+  color: #333333;
+}
   
   /* 上方欄位 (工具欄)
   -------------------------------------------------- */
@@ -55,13 +92,16 @@
     position: relative;
     cursor: default;
     width: 100%;
+    /*background-color: #535758;*/
+    margin-left: 210px; /* 將左側邊距自動設置為最大化，使圖像水平向右對齊 */
+    width: 115px; /*設定和圖片寬度差不多寬*/
   }
   .navLogo img {
     width: 105px;
     height: auto; /* 自動計算高度，保持圖片比例 */
     display: block; /* 設定為區塊元素 */
-    margin-left: 200px; /* 將左側邊距自動設置為最大化，使圖像水平向右對齊 */
     /*padding-right: 25px;*/
+    /*background-color: #796146;*/
   }
   
 
