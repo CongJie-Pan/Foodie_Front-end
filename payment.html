@@ -287,30 +287,33 @@
       </nav>
 
 
-      <!-- payment area -->
-    <section class="paymentArea">
-        <!-- payment container box -->
+    <!-- 收件人與寄送資訊 -->
+    <section class="paymentArea"> <!-- paymentArea 為兩section之共用大容器 -->
+
+        <!-- 收件人與寄送資訊之容器 -->
         <section class="payment-cont">
-            <!-- payment header -->
+
+            <!-- 收件人與寄送資訊之標題 -->
             <div class="payment-header">
                 <iconify-icon icon="mdi:truck-delivery-outline"></iconify-icon>
                 <h5>收件人/寄送資訊</h5>
             </div>
-            <!-- payment information -->
+
+            <!-- 收件人與寄送資訊之容器2 -->
             <div class="payment-info">
 
                 <form id="deliveryForm" class="needs-validation" novalidate>
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: 30px;">
                         <label for="name" class="required">收件人姓名 :</label>
                         <input type="text" class="form-control" id="name" placeholder="請輸入本名" required>
                         
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: 30px;">
                         <label for="phone" class="required">收件人電話 :</label>
                         <input type="tel" class="form-control" id="phone" placeholder="請輸入電話" required>
                         
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: 30px;">
                         <label for="address" class="required">地址 :</label>
                         <input type="text" class="form-control" id="address" placeholder="請輸入地址" required>
                         
@@ -325,7 +328,7 @@
                             <option value="OK">OK</option>
                             <option value="宅配">宅配</option>
                         </select>
-                        <select id="city" required>
+                        <select id="city" class="option-control" required>
                             <option value="" selected disabled>縣市</option>
                             <option value="台北市">台北市</option>
                             <option value="新北市">新北市</option>
@@ -334,10 +337,10 @@
                             <option value="台南市">台南市</option>
                             <option value="高雄市">高雄市</option>
                         </select>
-                        <select id="district" required>
+                        <select id="district" class="option-control" required>
                             <option value="" selected disabled>區域</option>
                         </select>
-                        <select id="store" required>
+                        <select id="store" required class="option-control">
                             <option value="" selected disabled>門市</option>
                             <option value="還中店">還中店</option>
                             <option value="建國店">建國店</option>
@@ -379,9 +382,9 @@
                             });
                         </script>
                     </div>
-                    <fieldset class="fieldset-legend" style="margin:100px auto 30px auto;">
+                    <fieldset class="fieldset-legend">
                         <legend>訂單備註</legend>
-                        <textarea name="comment" rows="10" cols="30" style="height: 160px; width: 500px; resize: none;"></textarea>
+                        <textarea name="comment" rows="10" cols="30" style="height: 160px; width: 550px; resize: none;"></textarea>
                     </fieldset>
                 </form>
             </div>
@@ -403,22 +406,22 @@
                     <label><input type="radio" name="payment-method" value="線上付款" checked> 線上付款</label>
                 </div>
                 <div class="separator">
-                    <span class="separatorText">線上與貨到付款請填寫以下資訊</span>
+                    <span class="separatorText">線上付款請填寫以下資訊</span>
                 </div>
                 <fieldset class="fieldset-legend" style="margin-top: 50px;">
                     <legend>信用卡資訊</legend>
                     <div class="paymentInfoInputs">
                         <div class="form-group">
                             <label for="credit-card">信用卡號碼</label>
-                            <input type="text" class="pay-form form-control" id="credit-card" placeholder="信用卡號碼" required style="margin-top: 10px;">
+                            <input type="number" class="pay-form form-control" id="credit-card" placeholder="信用卡號碼" required style="margin-top: 10px;">
                         </div>
                         <div class="inline-inputs">
                             <div class="form-group" style="width: 75%;">
-                                <label for="expiry-date">到期日</label>
+                                <label for="expiry-date">到期日<br>安全碼</label>
                                 <input type="text" class="pay-form form-control" id="expiry-date" style="width:60%" placeholder="到期日 （MM/YY）" required>
                             </div>
                             <div class="form-group" style="width: 25%;">
-                                <input type="text" class="pay-form form-control" id="securitynum" placeholder="安全碼" required>
+                                <input type="password" class="pay-form form-control" id="securitynum" placeholder="安全碼" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -431,32 +434,14 @@
             </form>
         </div>
     </section>
-    
+
     <div class="submitarea">
         <button id="submitButton" class="paymentbtn">結帳</button>
     </div>
 
 
-
     <!-- 處理未填寫偵測事件 -->
     <script>
-    // Custom date format with JavaScript
-    document.getElementById('expiry-date').addEventListener('input', function(e) {
-        let input = e.target.value;
-        if (/[^0-9\/]/.test(input)) {
-            e.target.value = input.replace(/[^0-9\/]/g, '');
-            return;
-        }
-        if (input.length === 2 && !input.includes('/')) {
-            e.target.value = input + '/';
-        } else if (input.length === 3 && input[2] !== '/') {
-            e.target.value = input.slice(0, 2) + '/' + input[2];
-        }
-        if (input.length > 5) {
-            e.target.value = input.slice(0, 5);
-        }
-    });
-
     // Handle invalid fields label coloring
     (function() {
         'use strict';
@@ -492,7 +477,7 @@
     })();
 
     // Submit both forms on button click
-    document.getElementById('submitButton').addEventListener('click', function() {
+    document.getElementById('submitButton').addEventListener('click', function(event) {
         const deliveryForm = document.getElementById('deliveryForm');
         const paymentForm = document.getElementById('paymentForm');
         let isValid = true;
@@ -513,14 +498,16 @@
         } else {
             deliveryForm.submit();
             paymentForm.submit();
-        }
 
-        /*結帳成功後顯示成功訊息並導至主頁*/
-        if (isValid = true) {
+            /*結帳成功後顯示成功訊息並導至主頁*/
             alert("✅ 結帳成功");
             window.location.href = 'index_LoggedIn.html';
         }
+
+        // Prevent default form submission
+        event.preventDefault();
     });
+
     </script>
 
     <style>
@@ -531,6 +518,7 @@
             color: #dc3545 !important;
         }
     </style>
+
     
 
     
