@@ -385,7 +385,7 @@ body{
 
 
   /* payment information */
-.delivery-info{
+.payment-info{
     border: solid 3px #ECE9B7;
     margin-top: -3px;
     border-radius: 1px 20px 20px 20px;
@@ -563,7 +563,6 @@ select {
     margin-top: 10px;
     width: 480px;
     color: #462804; /* Adjust text color */
-    margin-right: 60px;
 }
 
 .inline-inputs .pay-form {
