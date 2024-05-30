@@ -286,6 +286,44 @@
         
       </nav>
 
+      <!-- 工具欄第二欄 -->
+      <nav class="navbar navbar-expand-lg navbar-black bg-black" aria-label="Tenth navbar example"> 
+
+        <div class="container-fluid" style="background-color: #f7f7f7">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+          
+          <!-- 下拉式選單 -->
+          <div class="collapse navbar-collapse justify-content-md-center navCol-2" id="navbarsExample08"> 
+
+            <li class="nav-item dropdown">
+              <a class="nav-link " href="#" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 20px;color: #6e573a;font-weight: 1000;font-size: 18px;">商品瀏覽</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="Allproduct_LoggedIn.html">所有商品</a></li>
+                <li><a class="dropdown-item" href="Allproduct_LoggedIn.html#noodle">泡麵</a></li>
+                <li><a class="dropdown-item" href="Allproduct_LoggedIn.html#drinks">飲料</a></li>
+                <li><a class="dropdown-item" href="Allproduct_LoggedIn.html#snacks">零食糖果</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link " href="#" data-bs-toggle="dropdown" aria-expanded="flase" style="padding: 20px;color: #6e573a;font-weight: 1000;font-size: 18px;">關於我們</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">品牌理念</a></li>
+                <li><a class="dropdown-item" href="#">成員介紹</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#FooterArea"  aria-expanded="false" style="padding: 20px;color: #6e573a;font-weight: 1000;font-size: 18px;">聯絡我們</a>
+            </li>
+
+          </div>
+
+        </div>
+      </nav>
+
 
     <!-- 收件人與寄送資訊
     ================================================== -->
@@ -431,10 +469,10 @@
                         <div class="inline-inputs">
                             <div class="form-group" style="width: 75%;">
                                 <label for="expiry-date">到期日<br>安全碼</label>
-                                <input type="text" class="pay-form form-control" id="expiry-date" style="width:60%" placeholder="到期日 （MM/YY）" required>
+                                <input type="text" class="pay-form form-control" id="expiry-date" style="width:60%;;" placeholder="到期日 （MM/YY）" required>
                             </div>
                             <div class="form-group" style="width: 25%;">
-                                <input type="password" class="pay-form form-control" id="securitynum" placeholder="安全碼" required>
+                                <input type="password" class="pay-form form-control" id="securitynum" style="text-align: center;" placeholder="安全碼" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -569,8 +607,33 @@
         </a>
       </div>
 
-      <!-- 頁尾(含聯絡資訊) 
+      <!-- Footer 尾頁
       ================================================== -->
+      <section id="FooterArea" class="Footer border-top container " style="background-color: #ffffff; width: 100%;color: #796146;">
+
+        <footer class="py-5">
+
+          <div class="row" style="display: flex; align-items: center;">
+            <div class="col">
+                <h5 style="font-size: 22px;font-weight: 1000;margin-bottom: 20px;padding-left: 180px;">聯絡資訊</h5>
+                <ul style="font-size: 17px;font-weight: 500;padding-left: 200px;">
+                    <li style="margin-bottom: 10px;">客服專線：(03)26599</li>
+                    <li style="margin-bottom: 10px;">客服時間：09:00-18:00</li>
+                    <li style="margin-bottom: 10px;">信箱 : foodie@gmail.com</li>
+                    <li>地址：320桃園市中壢區中北路200號<br>(中原大學資訊管理學系)</li>
+                </ul>
+            </div>
+        
+            <div class="col">
+                <div class="MapArea">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.266894455652!2d121.24097727482966!3d24.957032541387473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346822143c046009%3A0x63e3ef21e3beebac!2z6LOH6KiK566h55CG5a2457O7!5e0!3m2!1szh-TW!2stw!4v1715502788841!5m2!1szh-TW!2stw" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+            </div>
+      
+        </footer>
 
       <section id="FooterArea" class="Footer border-top container" style="background-color: #ffffff; width: 100%; color: #796146;">
 

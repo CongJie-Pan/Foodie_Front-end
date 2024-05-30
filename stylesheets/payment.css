@@ -113,6 +113,44 @@ body{
     align-items: flex-end;
     padding-bottom: 20px;
   }
+
+  /* 工具列第二欄下拉式選單*/
+  
+  .navCol-2  {
+    list-style: none;
+    margin: 0px;
+    border: 0px;
+    background-color: #f7f7f7;
+    width: 100%;
+    margin-left: 0px;
+    
+  }
+  
+  
+  .dropdown-menu{
+    background: none;
+    /*border: 1px solid #7b6b5e; /* 添加邊框 */
+    border: 0px;
+  }
+  
+  .nav-link:hover{
+    background-color: #ece3d5;
+  }
+  
+  
+  .dropdown-item{
+    background-color: #eacfa8;
+    padding: 5px;
+    color:#3f3f3f;
+    text-align:justify;
+    font-weight: bold;
+    border: 1px solid #000; /* 添加邊框 */
+    
+  }
+  .dropdown-item:hover{
+    background-color: #fef6ea;
+    color: #3f3f3f;
+  }
   
   /* 中間選單
   -------------------------------------------------- */
