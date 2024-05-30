@@ -546,6 +546,7 @@ select {
     transform: translateX(-50%);
     background-color: #fffee8;
     padding: 0 10px;
+    font-size: 18px;
 }
 
 .paymentInfoInputs{
@@ -601,9 +602,8 @@ input[type="date"]::placeholder {
     color: #ababab;
     left: 50%;
     background-color: #fffee8;
-    padding: 0 10px;
     text-align: center;
-    margin-bottom: 5px;
+    font-size: 18px;
 }
 
 .submitarea{

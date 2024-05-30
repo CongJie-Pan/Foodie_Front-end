@@ -287,7 +287,9 @@
       </nav>
 
 
-    <!-- 收件人與寄送資訊 -->
+    <!-- 收件人與寄送資訊
+    ================================================== -->
+
     <section class="paymentArea"> <!-- paymentArea 為兩section之共用大容器 -->
 
         <!-- 收件人與寄送資訊之容器 -->
@@ -381,33 +383,44 @@
                                 });
                             });
                         </script>
+
                     </div>
+
                     <fieldset class="fieldset-legend">
                         <legend>訂單備註</legend>
                         <textarea name="comment" rows="10" cols="30" style="height: 160px; width: 550px; resize: none;"></textarea>
                     </fieldset>
+
                 </form>
             </div>
         </section>
         
-    <!-- payment info -->
+    <!-- 付款資訊
+    ================================================== -->
+
     <section class="payment-cont">
+
         <!-- payment header -->
         <div class="payment-header">
             <iconify-icon icon="mdi:account-payment-outline"></iconify-icon>
             <h5>付款資訊</h5>
         </div>
+
         <!-- payment information -->
         <div class="payment-info">
+
             <form id="paymentForm" class="needs-validation" novalidate>
+
                 <div class="form-group">
                     <label for="payment-method">付款方式 :</label>
                     <label><input type="radio" name="payment-method" value="貨到付款"> 貨到付款</label>
                     <label><input type="radio" name="payment-method" value="線上付款" checked> 線上付款</label>
                 </div>
+
                 <div class="separator">
                     <span class="separatorText">線上付款請填寫以下資訊</span>
                 </div>
+
                 <fieldset class="fieldset-legend" style="margin-top: 50px;">
                     <legend>信用卡資訊</legend>
                     <div class="paymentInfoInputs">
@@ -428,10 +441,15 @@
                             <label for="cardholder-name">持卡人姓名</label>
                             <input type="text" class="pay-form form-control" id="cardholder-name" placeholder="持卡人姓名" required>
                         </div>
+
+                        <div class="smallnotes">*您的信用卡資訊會被嚴格保護*</div>
                     </div>
                 </fieldset>
-                <div class="smallnotes">*您的信用卡資訊會被嚴格保護*</div>
+                
+
+                
             </form>
+
         </div>
     </section>
 
@@ -439,6 +457,24 @@
         <button id="submitButton" class="paymentbtn">結帳</button>
     </div>
 
+    <script>
+    // 到期日設置為預設格式(MM/YY)
+        document.getElementById('expiry-date').addEventListener('input', function (e) {
+            let input = e.target.value;
+            if (/[^0-9\/]/.test(input)) {
+                e.target.value = input.replace(/[^0-9\/]/g, '');
+                return;
+            }
+            if (input.length === 2 && !input.includes('/')) {
+                e.target.value = input + '/';
+            } else if (input.length === 3 && input[2] !== '/') {
+                e.target.value = input.slice(0, 2) + '/' + input[2];
+            }
+            if (input.length > 5) {
+                e.target.value = input.slice(0, 5);
+            }
+        });
+    </script>
 
     <!-- 處理未填寫偵測事件 -->
     <script>
