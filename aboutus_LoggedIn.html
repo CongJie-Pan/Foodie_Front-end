@@ -27,6 +27,7 @@
 
     <!-- 使用font-awesome線上免下載圖標(icon) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- 登入欄位引用線上資源 -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -40,15 +41,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
 
-    
     <!-- css 樣式檔案 -->
-    <link href="stylesheets/product.css" rel="stylesheet">
-
-    <!-- 登入註冊樣式檔  -->
-    <link rel="stylesheet" href="stylesheets/LoginArea.css"> 
+    <link href="stylesheets/aboutus.css" rel="stylesheet">
 
     <!-- 購物車樣式檔 -->
     <link rel="stylesheet" href="stylesheets/BuyCart.css">
+
+    <!-- cookie提示 網路引用樣式檔 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css">
 
   </head>
 
@@ -57,9 +57,7 @@
     <!-- 上方欄位 (工具欄)
     ================================================== -->
 
-    <!-- 先為code寫上註解 不要急著修改-->
-
-      <!-- 共具欄第一欄 -->
+      <!-- 工具欄第一欄 -->
       <nav class="navbar navbar-expand-lg"> 
 
         <!-- 工具欄第一欄內容物容器 -->
@@ -131,7 +129,7 @@
 
                                   <div class="cp2" data-min="1" data-max="50"> <!-- 數量增減 min最小購買數量、max最大購買數量 -->
                                     <input class="min" type="button" value="&minus;"/> <!-- ' &minus; '是減號 -->
-                                    <input class="BuyCart_quantity" type="text" value="1"/>
+                                    <input class="quantity" type="text" value="1"/>
                                     <input class="add" type="button" value="+"/> 
                                   </div>
                             
@@ -156,7 +154,7 @@
                                   </div>
                                   <div class="cp2" data-min="1" data-max="50"> <!-- 數量增減 min最小購買數量、max最大購買數量 -->
                                     <input class="min" type="button" value="&minus;"/> <!-- ' &minus; '是減號 -->
-                                    <input class="BuyCart_quantity" type="text" value="1"/>
+                                    <input class="quantity" type="text" value="1"/>
                                     <input class="add" type="button" value="+"/> 
                                 </div>                            
                               </div>
@@ -180,7 +178,7 @@
                                 </div>
                                 <div class="cp2" data-min="1" data-max="50"> <!-- 數量增減 min最小購買數量、max最大購買數量 -->
                                   <input class="min" type="button" value="&minus;"/> <!-- ' &minus; '是減號 -->
-                                  <input class="BuyCart_quantity" type="text" value="1"/>
+                                  <input class="quantity" type="text" value="1"/>
                                   <input class="add" type="button" value="+"/> 
                               </div>
                             </div>
@@ -199,7 +197,7 @@
                               document.body.addEventListener('click', function(event) {
                                   if (event.target.classList.contains('min') || event.target.classList.contains('add')) {
                                       const cp2 = event.target.closest('.cp2');
-                                      const quantityInput = cp2.querySelector('.BuyCart_quantity');
+                                      const quantityInput = cp2.querySelector('.quantity');
                                       let currentValue = parseInt(quantityInput.value);
                       
                                       const min = parseInt(cp2.getAttribute('data-min'));
@@ -216,12 +214,12 @@
                               });
                       
                               // 避免非數值資料輸入進數量欄位
-                              document.querySelectorAll('.BuyCart_quantity').forEach(input => {
+                              document.querySelectorAll('.quantity').forEach(input => {
                                   input.addEventListener('input', function() {
                                       let value = this.value.replace(/[^0-9]/g, '');
                                       const cp2 = this.closest('.cp2');
                                       const max = parseInt(cp2.getAttribute('data-max'));
-                      
+
                                       // 數量欄位限制購買數量，當輸入超過最大數量，則予以提醒。
                                       if (value > max) {
                                           alert(`最多只能購買 ${max} 個`);
@@ -301,10 +299,10 @@
             <li class="nav-item dropdown">
               <a class="nav-link " href="#" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 20px;color: #6e573a;font-weight: 1000;font-size: 18px;">商品瀏覽</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="AllProduct_LoggedIn.html">所有商品</a></li>
-                <li><a class="dropdown-item" href="AllProduct_LoggedIn.html#noodle">泡麵</a></li>
-                <li><a class="dropdown-item" href="AllProduct_LoggedIn.html#drinks">飲料</a></li>
-                <li><a class="dropdown-item" href="AllProduct_LoggedIn.html#snacks">零食糖果</a></li>
+                <li><a class="dropdown-item" href="Allproduct_LoggedIn.html">所有商品</a></li>
+                <li><a class="dropdown-item" href="Allproduct_LoggedIn.html#noodle">泡麵</a></li>
+                <li><a class="dropdown-item" href="Allproduct_LoggedIn.html#drinks">飲料</a></li>
+                <li><a class="dropdown-item" href="Allproduct_LoggedIn.html#snacks">零食糖果</a></li>
               </ul>
             </li>
 
@@ -325,279 +323,234 @@
         </div>
       </nav>
 
-   
-      <!-- 商品購買與介紹區域
-      ================================================== -->
-
-      <!-- 商品內容之大容器-->
-      <section class="desc-page">
-
-        <!-- 網頁當前路徑顯示 -->
-        <div class="product-path">
-          <a href="index_LoggedIn.html" class="path-link">首頁</a> &gt;
-          <a href="AllProduct_LoggedIn.html" class="path-link">商品</a> &gt;
-          <a href="product_LoggedIn.html" class="path-link">當前商品(名字)</a>
+      <!-- about us part ------------------- -->
+      <!-- 品牌理念 --------------------  -->
+      
+      <section id="brandConcept" class="aboutSect">
+        <div class="titleButtonSect">
+          <div class="titleButton1">
+            <h4>品牌理念</h4>
+          </div>
+        </div>
+        <div class="brandCont">
+            <div class="brandImgContlogo">
+                <img src="/picture/material/navPic/navLogo.png" alt="">
+            </div>
+            <div class="brandDesceven">
+                <h6>「吃貨道」 是我們的品牌名稱 <br>
+                     主要經營韓國的泡麵、零食和飲品 <br>
+                    這個名字不僅諧音「吃貨到」 <br> 同時也代表了那些熱愛美食 <br> 懂得品味和享受美食的人的生活態度 !</h6>
+            </div>
         </div>
 
-        <!-- 商品基本內容顯示容器(標題、圖片、價格、數量、計數器、購買按鈕)-->
-        <div id="product1" class="display">
-
-          <!-- 商品圖片 -->
-          <div class="cont-img">
-              <img src="/picture/material/productPic/instant noodles/Instant_noodles_1.jpg" alt="">
-          </div>
-
-          <!-- 商品之標題、價格、數量、計數器、購買按鈕顯示容器 -->
-          <div class="cont">
-
-              <!-- 商品標題 -->
-              <div class="cont-name">
-                  <h5>Nongshim 農心 <br>韓國境內版 辛拉麵 5包</h5>
-                  <h6>NT$239</h6>
-                  <!-- 可自行更動數量設定 -->
-                  <p>庫存數量：30</p>
-              </div>
-
-              <!-- 商品數量增減按鈕 -->
-              <div class="quantityButton" data-min="1" data-max="30">   <!-- 數量增減 data-min最低數量;data-max 最多數量 -->
-                <input type="button" value="&minus;" class="min"/> <!-- ' &minus; '是減號 -->
-                <input  type="text" value="1" class="quantity"/>
-                <input  type="button" value="+" class="add"/>
-              </div>
-
-              <!-- 商品購買按鈕容器 -->
-              <div class="addToCart">
-
-                <button type="button" class="btn" onclick="showAlert()">
-                  加入購物車
-                </button>
-
-                
-                <button type="button" class="btn" onclick=""> <!-- 導引至結帳區 -->
-                  立即購買
-                </button>
-
-              </div>
-
-              <!-- 購買數量增減控制 -->
-              <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    document.body.addEventListener('click', function(event) {
-                        if (event.target.classList.contains('min') || event.target.classList.contains('add')) {
-                            const quantityButton = event.target.closest('.quantityButton');
-                            const quantityInput = quantityButton.querySelector('.quantity');
-                            let currentValue = parseInt(quantityInput.value);
-                            
-                            const min = parseInt(quantityButton.getAttribute('data-min'));
-                            const max = parseInt(quantityButton.getAttribute('data-max'));
-
-                            if (event.target.classList.contains('min') && currentValue > min) {
-                                quantityInput.value = currentValue - 1;
-                            }
-
-                            if (event.target.classList.contains('add') && currentValue < max) {
-                                quantityInput.value = currentValue + 1;
-                            }
-                        }
-                    });
-
-                    // 避免非數值資料輸入進數量欄位
-                    document.querySelectorAll('.quantity').forEach(input => {
-                        input.addEventListener('input', function() {
-                            let value = this.value.replace(/[^0-9]/g, '');
-                            const quantityButton = this.closest('.quantityButton');
-                            const max = parseInt(quantityButton.getAttribute('data-max'));
-
-                            // 數量欄位限制購買數量，當輸入超過最大數量，則予以提醒。
-                            if (value > max) {
-                                alert(`最多只能購買 ${max} 個`);
-                                this.value = max;
-                            } else {
-                                this.value = value;
-                            }
-                        });
-                    });
-                });
-              </script>
-
-          </div>
-        
+        <div class="brandCont">
+            <div class="brandDescodd">
+                <h6>吃貨道是一個充滿探索精神的平台 <br> 我們不斷尋找來自韓國的各種口味和食材 <br> 讓顧客有機會品嚐到從未嘗試過的美味 <br> 無論是辛辣的泡麵、<br> 清爽的飲料還是香脆的零食 <br> 都能在吃貨道找到心中的味道</h6>
+            </div>
+            <div class="brandImgCont">
+                <div class="text-overlay">
+                    <h3>探索不同口味 <br> 尋找心中的味道</h3>
+                </div>
+                <img src="/picture/material/about/about2.jpg" alt="">
+            </div>
+            
         </div>
 
-        <div class="separator"></div> <!-- 分隔線 -->
-        
-        <!-- 商品介紹
-         ------------------------->
-
-        <div class="introduction">
-
-          <!-- 商品介紹 -->
-          <h4> &#92;商品介紹&sol;</h4>
-
-          <ul>
-            <li>純正韓國風味辛湯頭</li>
-            <li>搭配帶勁Q彈的麵條</li>
-            <li>不容錯過的農心泡麵代表作-辛拉麵</li>
-            <li>韓國家家戶戶必備的拉麵</li>
-            <li>老饕們可以嘗試看看 &#x1F60B;</li>
-          </ul>
-
-          <br>
-
-          <!-- 成分内容 -->
-          <h4> &#92;成分内容&sol;</h4>
-          <p>
-            調味包: <br> 牛肉調味粉(牛肉萃取粉. 洋蔥.胡椒.醬油).鹽.辛辣調味粉 (玉米澱粉.辣椒萃取粉.果糖)醬油調味粉(大豆小麥.鹽.糖.胺基乙酸).糖.調味醬粉(玉米糖漿.麵粉.辣椒.糖.鹽).調味牛肉粉(鹽，糖 玉米澱粉.牛肉萃取粉.洋蔥.大蒜).醬油粉(大豆.麥芽糊精).胡椒粉.辣椒風味粉(辣椒，蒜.洋蔥).5-次黃瞟哈校音碳酸二鈉. 5-鳥瞟哈核音磷酸納.琥珀酸二鈉.大豆蛋白.乾燥食材乾 蔥.乾青江菜.乾香菇.乾胡蘿蔔.乾辣椒.牛肉(產地:澳洲)
-          </p>
-
-          <br>
-
-          <!-- 過敏原資訊 -->
-          <h4> &#92;過敏原資訊&sol;</h4>
-          <p>
-            過敏原資訊：<br> 小麥粉.馬鈴薯澱粉.棕櫚 油.醋酸澱粉.碳酸鈣(蛋殼).鹽.蔬菜萃取液(香菇.蔥.薑.蘿蔔).碳酸鉀.碳酸鈉，檸檬酸.寡糖綠茶風味液(寡糖.綠茶萃取物).維生素B
-            <br>
-            <br>
-            &#10056;注意:本產品含有含麩質之穀物、大豆、蛋殼鈣及其製品,不適合對其過敏體質者食用。
-          </p>
-          <br>
-
-          <!-- 注意事項 -->
-          <div class="notice">
-            <iconify-icon icon="emojione:double-exclamation-mark"></iconify-icon>
-            <h5>注意事項</h5>
-            <iconify-icon icon="emojione:double-exclamation-mark"></iconify-icon>
-          </div>
-        
-          <h6>
-            &#128666;超商單筆限重為5公斤|宅配15公斤&#128230; <br><br>
-            &#128314;如購買多樣請務必留意重量及材積&#128314; <br><br>
-            &#128172;如有不清楚部分請透過店長客服詢問&#128587;
-          </h6>
-
-          </div>
-
+        <div class="brandCont">
+            <div class="brandImgCont3">
+                <div class="text-overlayodd">
+                    <h3>品質保證 <br> 美味無限</h3>
+                </div>
+                <img src="/picture/material/about/about3.jpg" alt="">
+            </div>
+            <div class="brandDescEven2">
+                <h6>我們嚴格把關每一款產品的品質 <br> 只有通過了嚴格的篩選和品質測試的產品 <br> 才能登上我們的平台 <br> 我們希望每位顧客都能放心選購 <br> 享受到最美味的韓國泡麵、零食和飲料</h6>
+            </div>
+            
+            
         </div>
+
+      </section>
 
       <div class="separator"></div> <!-- 分隔線 -->
 
-      <!-- 商品留言評價區域
-      ================================================== -->
-
-      <section class="comment">
-
-        <!-- 左方填寫評論區域 -->
-        <div class="leftside">
-
-          <h5>留言評價</h5>
-
-          <form action="#" method="post">
-
-            <label for="fname">姓名</label><br>
-
-            <input type="text" id="fname" name="fname" class="CommentNameInput"><br>
-
-            <p>留言</p>
-            <textarea name="message" rows="10" cols="30" style="height: 200px;resize: none; "></textarea>
-            <br><br>
-
-            <!-- 星星評分部分 -->
-            <div class="star" id="star-rating">
-
-              <iconify-icon icon="ic:baseline-star" width="40" data-index="1" class="star-icon"></iconify-icon>
-              <iconify-icon icon="ic:baseline-star" width="40" data-index="2" class="star-icon"></iconify-icon>
-              <iconify-icon icon="ic:baseline-star" width="40" data-index="3" class="star-icon"></iconify-icon>
-              <iconify-icon icon="ic:baseline-star" width="40" data-index="4" class="star-icon"></iconify-icon>
-              <iconify-icon icon="ic:baseline-star" width="40" data-index="5" class="star-icon"></iconify-icon>
-              
-            </div>
-
-            <input type="submit" value="送出">
-
-          </form>
-
+      <!-- 成員介紹 ------------------------------  -->
+      <section id="MemberIntro" class="aboutSect">
+        <div class="titleButton">
+          <h4>成員介紹</h4> <br>
         </div>
-        
-        <!-- 星星js程式部分 -->
-        <script>
-          document.addEventListener("DOMContentLoaded", function() {
-            const starRatings = document.querySelectorAll(".star");
-        
-              starRatings.forEach((starRating) => {
-                const starIcons = starRating.querySelectorAll(".star-icon");
-        
-                  starIcons.forEach((starIcon) => {
-                      starIcon.addEventListener("click", function() {
-                        const clickedIndex = parseInt(this.getAttribute("data-index"));
-        
-                          starIcons.forEach((icon, index) => {
-                              if (index < clickedIndex) {
-                                  icon.setAttribute("icon", "ic:baseline-star");
-                                  icon.classList.add("selected");
-                              } else {
-                                  icon.setAttribute("icon", "ic:baseline-star");
-                                  icon.classList.remove("selected");
-                              }
-                          });
-        
-                        console.log("Selected Rating: " + clickedIndex);
-                      });
-                  });
-              });
-          });
-        </script>
-        
-        <!-- 右方顯示評論區域 -->
-        <div class="rightside">
 
-          <h5>評論</h5>
-
-          <!-- 評論顯示盒 - 大容器 -->
-          <div class="comment-box">
-
-            <!-- 評論顯示盒 小容器 -->
-            <div class="box-top">
-
-              <!-- 用戶圖標 -->
-              <iconify-icon icon="mingcute:user-4-fill" width="55" style="font-size: 36px;"></iconify-icon>
-
-              <h6>酷寄</h6>
-
-              <!-- 顯示評論之星星顯示區 -->
-              <div class="starcomment" id="star-comment">
-
-                <iconify-icon icon="ic:baseline-star" width="25" data-index="1" class="stars" style="font-size: 15px; color: gold;"></iconify-icon>
-                <iconify-icon icon="ic:baseline-star" width="25" data-index="2" class="stars" style="font-size: 15px; color: gold;"></iconify-icon>
-                <iconify-icon icon="ic:baseline-star" width="25" data-index="3" class="stars" style="font-size: 15px; color: gold;"></iconify-icon>
-                <iconify-icon icon="ic:baseline-star" width="25" data-index="4" class="stars" style="font-size: 15px; color: gold;"></iconify-icon>
-                <iconify-icon icon="ic:baseline-star" width="25" data-index="5" class="stars" style="font-size: 15px; color: gold;"></iconify-icon>
-              
-              </div>
-
-              <p>
-                辛拉麵麵條Q彈超好吃 !! ~~
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
+        <!-- front members -->
+        <div class="cardBoxCont">
+          <!-- back member 1 -->
+            <div class="memberCardCont">
+              <div class="card_inner">
+                <div class="front_side">
+                  <p>11144209</p>
+                  <img src="/picture/memberPhoto/jay.jpg" alt=" "> <br>
+                  <div class="cardName">
+                    <h1>潘驄杰</h1>
+                    <h3>Front-End Developer</h3>
+                  </div>
+                </div>
+                <div class="back_side">
+                  <h2>心得</h2>
+                  <p>這次是我第二次主導前後端的專案實作，相比前一次，這次順利了很多，前後端的溝通與合作都非常主動。我在項目中學習了前端的排版方法，體會到前端工作並不是那麼簡單。當然，最大的挑戰是前後端程式碼合併的問題。我們採取的方法是由我負責主要的結構設計，其餘的功能則分配給其他組員單獨完成。最後，透過我來進行程式碼合併並上傳。這個過程中，我不僅提升了技術能力，還加深了對團隊合作的重要性的理解。
+                  </p>
+                  <div class="social-icon">
+                    <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-facebook-square"></i></a>
+                    <a href="#"><i class="fa-regular fa-envelope"></i></a>
+                </div>
+                </div>
           
-      </section>
-
-      <!-- 回到頂部按鈕 -->
-      <div class="slider">
-        <a href="#">
-          <div class="top">
-              <iconify-icon icon="iconoir:page-up"></iconify-icon>
+              </div>
+          
+            </div>
+          <!-- Front member 2 -->
+          <div class="memberCardCont">
+            <div class="card_inner">
+              <div class="front_side">
+                <p>11144275 </p>
+                <img src="/picture/memberPhoto/nathania.jpg" alt=" "> <br>
+                <div class="cardName">
+                  <h1>潘秀玉</h1>
+                  <h3>Front-End Developer</h3>
+                </div>
+              </div>
+              <div class="back_side">
+                <h2>心得</h2>
+                <p>整體而言，這個專案是一個寶貴的學習經歷，增強了我們的技術技能，並教會了我們在現實專案環境中團隊合作和溝通的重要性。看到我們的共同努力最終產生了一個一致且功能完善的最終產品，這讓我們感到非常滿足，並進一步強調了在任何複雜專案中，協作是成功的關鍵。
+                </p>
+                <div class="social-icon">
+                  <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#" target="_blank"><i class="fa-brands fa-facebook-square"></i></a>
+                  <a href="#"><i class="fa-regular fa-envelope"></i></a>
+              </div>
+              </div>
+        
+            </div>
+        
           </div>
-        </a>
-      </div>
+          <!-- Front member 3 -->
+          <div class="memberCardCont">
+            <div class="card_inner">
+              <div class="front_side">
+                <p>11144223</p>
+                <img src="/picture/memberPhoto/yinzhen.jpg" alt=" "> <br>
+                <div class="cardName">
+                  <h1>張尹榛</h1>
+                  <h3>Front-End Developer</h3>
+                </div>
+              </div>
+              <div class="back_side">
+                <h2>心得</h2>
+                <p>這學期換擔任前端的部分，我覺得前置作業是很重要的，一開始要確定好主題還有方向，這樣在實作過程中才不會越來越偏離理想的樣子，另外，使用流程也要清楚方便，讓使用者可以直觀操作，而實作的部分需要花一些時間去調整版型。最後我認為前後端的溝通也非常重要，很感謝組員們按時完成進度，以及後端組員的努力，每週撥空討論，前後端整合後才能讓我們的網站是完整、流暢的。
+                </p>
+                <div class="social-icon">
+                  <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#" target="_blank"><i class="fa-brands fa-facebook-square"></i></a>
+                  <a href="#"><i class="fa-regular fa-envelope"></i></a>
+              </div>
+              </div>
+        
+            </div>
+        
+          </div>
+        </div>
 
-      <!-- Footer 尾頁
+
+        <!-- backend members -->
+        <div class="cardBoxCont">
+          <!-- back member 1 -->
+            <div class="memberCardCont">
+              <div class="card_inner">
+                <div class="front_side">
+                  <p>11144138</p>
+                  <img src="/picture/memberPhoto/ray.jpg" alt=" 譚睿承"> <br>
+                  <div class="cardName">
+                    <h1>譚睿承</h1>
+                    <h3>Back-End Developer</h3>
+                  </div>
+                </div>
+                <div class="back_side">
+                  <h2>心得</h2>
+                  <p>這學期輪到我們小組做後端開發的部分，但是我們在做後端的部分上面有遇到許多不少的問題，像是當我們想要設定一些有關比較複雜的java函數放在檔案裏面會導致許多的錯誤，像是當我在製作後端密碼傳送時的時候，我想要設定關於哈希加密的時候環境設定等等的問題。總之在很多關於後端的部份我們還有很多的部分要學，希望未來如果要繼續學習後端的部分我可以能夠更能精進，能將現在的所學套用到未來。</p>
+                  <div class="social-icon">
+                    <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-facebook-square"></i></a>
+                    <a href="#"><i class="fa-regular fa-envelope"></i></a>
+                </div>
+                </div>
+          
+              </div>
+          
+            </div>
+          <!-- back member 2 -->
+          <div class="memberCardCont">
+            <div class="card_inner">
+              <div class="front_side">
+                <p>11144139 </p>
+                <img src="/picture/memberPhoto/anita.jpg" alt=" "> <br>
+                <div class="cardName">
+                  <h1>高嘉嬨</h1>
+                  <h3>Back-End Developer</h3>
+                </div>
+              </div>
+              <div class="back_side">
+                <h2>心得</h2>
+                <p>這學期輪到我們小組負責後端部分的開發。雖然這是我首次深入了解後端程式設計，但由於有上學期的經驗，減少了許多手忙腳亂的情況。這學期，我們兩邊的小組成員能夠利用彼此在前端和後端的經驗和知識互相幫助，溝通更為流暢，網站也因此能夠快速地成形。通過這次的合作，我學到了如何更好地整合前後端技術，並深刻體會到團隊合作的重要性。
+                </p>
+                <div class="social-icon">
+                  <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#" target="_blank"><i class="fa-brands fa-facebook-square"></i></a>
+                  <a href="#"><i class="fa-regular fa-envelope"></i></a>
+              </div>
+              </div>
+        
+            </div>
+        
+          </div>
+          <!-- back member 3 -->
+          <div class="memberCardCont">
+            <div class="card_inner">
+              <div class="front_side">
+                <p>11144155</p>
+                <img src="/picture/memberPhoto/zijie.png" alt=" "> <br>
+                <div class="cardName">
+                  <h1>鍾子傑</h1>
+                  <h3>Back-End Developer</h3>
+                </div>
+              </div>
+              <div class="back_side">
+                <h2>心得</h2>
+                <p>這次我們改負責後端的部分雖然有了一點前端的經驗感覺會比之前輕鬆一點，但結果一開始還是有非常多不懂和找不到問題點的BUG，在多次開會溝通和資料查詢下我們才逐漸地讓架構成型和成功的一一排錯。多虧了兩組所有人的溝通與合作最後才能有效的連結前端與後端完成這個網站。
+                </p>
+                <div class="social-icon">
+                  <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#" target="_blank"><i class="fa-brands fa-facebook-square"></i></a>
+                  <a href="#"><i class="fa-regular fa-envelope"></i></a>
+              </div>
+              </div>
+        
+            </div>
+        
+          </div>
+        </div>
+
+
+        
+      </section>
+      
+
+     
+
+      <div class="separator_Footer"></div> <!-- 分隔線 -->
+
+      <!-- 頁尾(含聯絡資訊) 
       ================================================== -->
-      <section id="FooterArea" class="Footer border-top container " style="background-color: #ffffff; width: 100%;color: #796146;">
+
+      <section id="FooterArea" class="Footer container " style="background-color: #fff; width: 100%;color: #796146;">
 
         <footer class="py-5">
 
@@ -623,7 +576,9 @@
       
         </footer>
 
-        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top ">
+        <div class="separator_Footer"></div> <!-- 分隔線 -->
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4">
 
           <p>&copy; 2024 Company, Inc. All rights reserved.</p>
 
@@ -635,18 +590,32 @@
 
       </section>
 
-    <!-- Javascript 區域 -->
-    <script>
-      function showAlert() {
-        alert("✅ 已加入購物車！");
-      }
-    </script>
+      <!-- Cookie 提示區域 -->
+      <div class="alert text-center cookiealert" role="alert">
+        &#x1F36A; 我們使用cookie來提供和改善服務！若繼續使用本網站，表示您同意我們使用cookie。 <a href="https://cookiesandyou.com/" target="_blank">了解更多關於Cookie</a>
+        <br><br>
+        <button type="button" class="btn btn-primary btn-sm acceptcookies" style="background-color: rgb(138, 241, 138);color: #282929;">
+            同意
+        </button>
+      </div>
+      <!--------->
 
+      <!-- 回到頂部按鈕 -->
+      <div class="slider">
+        <a href="#">
+          <div class="top">
+              <iconify-icon icon="iconoir:page-up"></iconify-icon>
+          </div>
+        </a>
+      </div>
+
+    <!-- Javascript 區域 -->
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-    <script async src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>
-
-</body>
+    <script async src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script></body>
+    
+    <!-- 添加 cookie提示 script -->
+    <script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
 
   </body>
   
