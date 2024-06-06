@@ -173,22 +173,6 @@
     background-color: #fef6ea;
     color: #3f3f3f;
   }
-
-  a{ 
-    color:rgba(31, 31, 31, 0.4);
-    text-decoration: none;
-    text-decoration-color:white;
-    transition: color 0.3s, text-decoration-color 0.3s;
-  }
-  a:hover { /* hover 加上底線與放大字體效果*/
-    color: rgba(0, 0, 0, 0.975);
-    text-decoration: underline;
-    text-underline-offset: 1rem;
-    text-decoration-color: rgb(181, 181, 181);
-    font-size: 20px;
-    font-weight: bold;
-  
-  }
   
   /* 圖片輪播
   -------------------------------------------------- */

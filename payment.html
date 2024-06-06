@@ -80,7 +80,7 @@
               
               <!-- style 設定搜尋欄的長度 -->
               <form class="d-flex" style="width:750px;"> 
-                <input id="searchBar" class="form-control me-2 searchBar" type="search" placeholder="🔍 搜尋" aria-label="Search"  style="background-color: white;">
+                <input id="searchBar" class="form-control me-2 searchBar" type="search" placeholder="🔍 搜尋" aria-label="Search" style="background-color: #ffffff;height: 35px;width:750px;">
                 
                 <script>
                   // 在輸入框獲得焦點時，添加特定的樣式
@@ -286,46 +286,90 @@
         
       </nav>
 
+      <!-- 工具欄第二欄 -->
+      <nav class="navbar navbar-expand-lg navbar-black bg-black" aria-label="Tenth navbar example"> 
 
-      <!-- payment area -->
-    <section class="paymentArea">
-        <!-- payment container box -->
+        <div class="container-fluid" style="background-color: #f7f7f7">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+          
+          <!-- 下拉式選單 -->
+          <div class="collapse navbar-collapse justify-content-md-center navCol-2" id="navbarsExample08"> 
+
+            <li class="nav-item dropdown">
+              <a class="nav-link " href="#" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 20px;color: #6e573a;font-weight: 1000;font-size: 18px;">商品瀏覽</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="Allproduct_LoggedIn.html">所有商品</a></li>
+                <li><a class="dropdown-item" href="Allproduct_LoggedIn.html#noodle">泡麵</a></li>
+                <li><a class="dropdown-item" href="Allproduct_LoggedIn.html#drinks">飲料</a></li>
+                <li><a class="dropdown-item" href="Allproduct_LoggedIn.html#snacks">零食糖果</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link " href="#" data-bs-toggle="dropdown" aria-expanded="flase" style="padding: 20px;color: #6e573a;font-weight: 1000;font-size: 18px;">關於我們</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="aboutus_LoggedIn.html#brandConcept">品牌理念</a></li>
+                  <li><a class="dropdown-item" href="aboutus_LoggedIn.html#MemberIntro">成員介紹</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#FooterArea"  aria-expanded="false" style="padding: 20px;color: #6e573a;font-weight: 1000;font-size: 18px;">聯絡我們</a>
+            </li>
+
+          </div>
+
+        </div>
+      </nav>
+
+
+    <!-- 收件人與寄送資訊
+    ================================================== -->
+
+    <section class="paymentArea"> <!-- paymentArea 為兩section之共用大容器 -->
+
+        <!-- 收件人與寄送資訊之容器 -->
         <section class="payment-cont">
-            <!-- payment header -->
+
+            <!-- 收件人與寄送資訊之標題 -->
             <div class="payment-header">
                 <iconify-icon icon="mdi:truck-delivery-outline"></iconify-icon>
                 <h5>收件人/寄送資訊</h5>
             </div>
-            <!-- payment information -->
-            <div class="delivery-info">
+
+            <!-- 收件人與寄送資訊之容器2 -->
+            <div class="payment-info">
 
                 <form id="deliveryForm" class="needs-validation" novalidate>
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: 30px;">
                         <label for="name" class="required">收件人姓名 :</label>
                         <input type="text" class="form-control" id="name" placeholder="請輸入本名" required>
                         
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: 30px;">
                         <label for="phone" class="required">收件人電話 :</label>
                         <input type="tel" class="form-control" id="phone" placeholder="請輸入電話" required>
                         
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: 30px;">
                         <label for="address" class="required">地址 :</label>
                         <input type="text" class="form-control" id="address" placeholder="請輸入地址" required>
                         
                     </div>
                     <div class="form-group">
                         <label for="delivery">寄送方式 :</label>
-                        <select id="delivery" class="option-control">
-                            <option value="7-11" selected>7-11</option>
+                        <select id="delivery" class="option-control" required>
+                            <option value="" selected disabled>選擇寄送方式</option>
+                            <option value="7-11">7-11</option>
                             <option value="全家">全家</option>
                             <option value="萊爾富">萊爾富</option>
                             <option value="OK">OK</option>
                             <option value="宅配">宅配</option>
                         </select>
-                        <select id="city">
-                            <option value="city" selected>縣市</option>
+                        <select id="city" class="option-control" required>
+                            <option value="" selected disabled>縣市</option>
                             <option value="台北市">台北市</option>
                             <option value="新北市">新北市</option>
                             <option value="桃園市">桃園市</option>
@@ -333,188 +377,132 @@
                             <option value="台南市">台南市</option>
                             <option value="高雄市">高雄市</option>
                         </select>
-                        <select id="district">
-                            <option value="district" selected>區城</option>
-                            <option value="桃園區">桃園區</option>
-                            <option value="中壢區">中壢區</option>
-                            <option value="八德區">八德區</option>
-                            <option value="平鎮區">平鎮區</option>
-                            <option value="龜山區">龜山區</option>
-                            <option value="大溪區">大溪區</option>
+                        <select id="district" class="option-control" required>
+                            <option value="" selected disabled>區域</option>
                         </select>
-                        <select id="store">
-                            <option value="store" selected>門市</option>
+                        <select id="store" required class="option-control">
+                            <option value="" selected disabled>門市</option>
                             <option value="還中店">還中店</option>
                             <option value="建國店">建國店</option>
-                            <option value="柏德店">柏德店</                            <option value="中北店">中北店</option>
+                            <option value="柏德店">柏德店</option>
+                            <option value="中北店">中北店</option>
                             <option value="元智店">元智店</option>
                         </select>
+
                     </div>
-                    <fieldset class="fieldset-legend" style="margin:100px auto 30px auto;">
+
+                    <fieldset class="fieldset-legend">
                         <legend>訂單備註</legend>
-                        <textarea name="comment" rows="10" cols="30" style="height: 160px; width: 500px; resize: none;"></textarea>
+                        <textarea name="comment" rows="10" cols="30" style="height: 160px; width: 550px; resize: none;"></textarea>
                     </fieldset>
+
                 </form>
             </div>
         </section>
-        <!-- payment info -->
-        <section class="payment-cont">
-            <!-- payment header -->
-            <div class="payment-header">
-                <iconify-icon icon="mdi:account-payment-outline"></iconify-icon>
-                <h5>付款資訊</h5>
-            </div>
-            <!-- payment information -->
-            <div class="delivery-info">
+        
+    <!-- 付款資訊
+    ================================================== -->
 
-                <form id="paymentForm" class="needs-validation" novalidate>
-                    
-                    <div class="form-group-pay">
-                        <label for="payment-method">付款方式 :</label>
-                        <label><input type="radio" name="payment-method" value="貨到付款"> 貨到付款</label>
-                        <label><input type="radio" name="payment-method" value="線上付款"> 線上付款</label>
-                    </div>
+    <section class="payment-cont">
 
-                    <div class="separator">
-                        <span class="separatorText">線上付款請填寫以下資訊</span>
-                    </div>
+        <!-- payment header -->
+        <div class="payment-header">
+            <iconify-icon icon="mdi:account-payment-outline"></iconify-icon>
+            <h5>付款資訊</h5>
+        </div>
 
-                    <fieldset class="fieldset-legend" style="margin-top: 50px;">
+        <!-- payment information -->
+        <div class="payment-info">
+            <form id="paymentForm" class="needs-validation" novalidate>
+                <div class="form-group">
+                    <label for="payment-method">付款方式 :</label>
+                    <label><input type="radio" name="payment-method" value="貨到付款"> 貨到付款</label>
+                    <label><input type="radio" name="payment-method" value="線上付款" checked> 線上付款</label>
+                </div>
 
-                        <legend>訂單備註</legend>
+                <div class="separator">
+                    <span class="separatorText">如果是「線上付款」請填寫以下資訊</span>
+                </div>
 
-                        <div class="paymentInfoInputs">
-                            <input type="text" class="pay-form" id="credit-card" placeholder="信用卡號碼" style="margin-top: 10px;">
-                            <div class="inline-inputs">
-                                <input type="text" class="pay-form" id="expiry-date" placeholder="到期日 （MM/YY）" style="width: 65%;">
-                                <input type="text" class="pay-form" id="securitynum" placeholder="安全碼" style="width: 26%;">
-                            </div>
-                            <input type="text" class="pay-form" id="cardholder-name" placeholder="持卡人姓名">
+                <fieldset class="fieldset-legend" style="margin-top: 50px;">
+                    <legend>信用卡資訊</legend>
+                    <div class="paymentInfoInputs">
+                        <div class="form-group">
+                            <label for="credit-card">信用卡號碼</label>
+                            <input type="number" class="pay-form form-control" id="credit-card" placeholder="信用卡號碼" required style="margin-top: 10px;">
                         </div>
-                    </fieldset>
-                    <div class="smallnotes">*您的信用卡資訊會被嚴格保護*</div>
-                </form>
-            </div>
-        </section>
+                        <div class="inline-inputs">
+                            <div class="form-group" style="width: 75%;">
+                                <label for="expiry-date">到期日<br>安全碼</label>
+                                <input type="text" class="pay-form form-control" id="expiry-date" style="width:60%;" placeholder="到期日 （MM/YY）" required>
+                            </div>
+                            <div class="form-group" style="width: 25%;">
+                                <input type="password" class="pay-form form-control" id="securitynum" style="text-align: center;" placeholder="安全碼" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cardholder-name">持卡人姓名</label>
+                            <input type="text" class="pay-form form-control" id="cardholder-name" placeholder="持卡人姓名" required>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="smallnotes">*您的信用卡資訊會被嚴格保護*</div>
+            </form>
+
+        </div>
+
     </section>
+
     <div class="submitarea">
         <button id="submitButton" class="paymentbtn">結帳</button>
     </div>
 
-    <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (() => {
-            'use strict';
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            const forms = document.querySelectorAll('.needs-validation');
-            // Loop over them and prevent submission
-            Array.from(forms).forEach(form => {
-                form.addEventListener('submit', event => {
-                    if (!form.checkValidity()) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-                    form.classList.add('was-validated');
-                }, false);
-            });
-        })();
-
-        // Custom date format with JavaScript
-        document.getElementById('expiry-date').addEventListener('input', function (e) {
-            let input = e.target.value;
-            if (/[^0-9\/]/.test(input)) {
-                e.target.value = input.replace(/[^0-9\/]/g, '');
-                return;
-            }
-            if (input.length === 2 && !input.includes('/')) {
-                e.target.value = input + '/';
-            } else if (input.length === 3 && input[2] !== '/') {
-                e.target.value = input.slice(0, 2) + '/' + input[2];
-            }
-            if (input.length > 5) {
-                e.target.value = input.slice(0, 5);
-            }
-        });
-
-        // Handle invalid fields label coloring
-        (function() {
-            'use strict';
-            window.addEventListener('load', function() {
-                var forms = document.getElementsByClassName('needs-validation');
-                Array.prototype.filter.call(forms, function(form) {
-                    form.addEventListener('submit', function(event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                            var invalidFields = form.querySelectorAll(':invalid');
-                            invalidFields.forEach(function(field) {
-                                var label = form.querySelector('label[for="' + field.id + '"]');
-                                if (label) {
-                                    label.classList.add('invalid');
-                                }
-                            });
-                        } else {
-                            var labels = form.querySelectorAll('label.invalid');
-                            labels.forEach(function(label) {
-                                label.classList.remove('invalid');
-                            });
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
-
-
-
-       // Submit both forms on button click
-        document.getElementById('submitButton').addEventListener('click', function() {
-            const deliveryForm = document.getElementById('deliveryForm');
-            const paymentForm = document.getElementById('paymentForm');
-            let isValid = true;
-
-            if (!deliveryForm.checkValidity()) {
-                deliveryForm.classList.add('was-validated');
-                isValid = false;
-            }
-
-            if (!paymentForm.checkValidity()) {
-                paymentForm.classList.add('was-validated');
-                isValid = false;
-            }
-
-            if (!isValid) {
-                alert("請填寫所有必填欄位");
-            } else {
-                deliveryForm.submit();
-                paymentForm.submit();
-            }
-        });
-    </script>
     <style>
         .is-invalid {
-            border-color: #dc3545;
+            border-color: #dc3545 !important;
         }
         .invalid {
-            color: #dc3545;
+            color: #dc3545 !important;
         }
     </style>
-    
 
-    
+    <!-- 回到頂部按鈕 -->
+    <div class="slider">
+    <a href="#">
+        <div class="top">
+            <iconify-icon icon="iconoir:page-up"></iconify-icon>
+        </div>
+    </a>
+    </div>
 
-
-      <!-- 回到頂部按鈕 -->
-      <div class="slider">
-        <a href="#">
-          <div class="top">
-              <iconify-icon icon="iconoir:page-up"></iconify-icon>
-          </div>
-        </a>
-      </div>
-
-      <!-- 頁尾(含聯絡資訊) 
+      <!-- Footer 尾頁
       ================================================== -->
+      <section id="FooterArea" class="Footer border-top container " style="background-color: #ffffff; width: 100%;color: #796146;">
+
+        <footer class="py-5">
+
+          <div class="row" style="display: flex; align-items: center;">
+            <div class="col">
+                <h5 style="font-size: 22px;font-weight: 1000;margin-bottom: 20px;padding-left: 180px;">聯絡資訊</h5>
+                <ul style="font-size: 17px;font-weight: 500;padding-left: 200px;">
+                    <li style="margin-bottom: 10px;">客服專線：(03)26599</li>
+                    <li style="margin-bottom: 10px;">客服時間：09:00-18:00</li>
+                    <li style="margin-bottom: 10px;">信箱 : foodie@gmail.com</li>
+                    <li>地址：320桃園市中壢區中北路200號<br>(中原大學資訊管理學系)</li>
+                </ul>
+            </div>
+        
+            <div class="col">
+                <div class="MapArea">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.266894455652!2d121.24097727482966!3d24.957032541387473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346822143c046009%3A0x63e3ef21e3beebac!2z6LOH6KiK566h55CG5a2457O7!5e0!3m2!1szh-TW!2stw!4v1715502788841!5m2!1szh-TW!2stw" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+            </div>
+      
+        </footer>
 
       <section id="FooterArea" class="Footer border-top container" style="background-color: #ffffff; width: 100%; color: #796146;">
 
@@ -529,6 +517,7 @@
       </section>
 
     <!-- Javascript 區域 -->
+    <script src="javascript/payment.js"></script>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <script async src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script></body>

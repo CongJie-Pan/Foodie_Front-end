@@ -122,12 +122,16 @@
 
                         <!-- 註冊頁面 -->
                         <form action="#">
-                            <h1 style="color: #281805;font-weight: 900; bolder;padding-bottom: 15px;font-weight: 800;">註冊新會員</h1>
-                            <input type="text" style="color: #66625e;font-weight: 800;background-color: #eaeaea;" placeholder="姓名" />
-                            <input type="number" style="color: #66625e;font-weight: 800;background-color: #eaeaea;" placeholder="電話" />
-                            <input type="email" style="color: #66625e;font-weight: 800;background-color: #eaeaea;" placeholder="電子郵件" />
-                            <input type="password" style="color: #66625e;font-weight: 800;background-color: #eaeaea;" placeholder="密碼" />
-                            <button style="background-color: #a59e94;color: #ffffff;border: 0px;">註冊</button>
+                          <h1 style="color: #281805;font-weight: 900;padding-bottom: 15px;font-weight: 800;">註冊新會員</h1>
+                          <input type="text" name="username" style="color: #66625e;font-weight: 800;background-color: #eaeaea;" placeholder="姓名" required />
+                          <input type="number" name="phone" style="color: #66625e;font-weight: 800;background-color: #eaeaea;" placeholder="電話" required />
+                          <input type="email" name="email" style="color: #66625e;font-weight: 800;background-color: #eaeaea;" placeholder="電子郵件" required />
+                          <input type="password" name="password" style="color: #66625e;font-weight: 800;background-color: #eaeaea;" placeholder="密碼" required />
+                          <input type="password" name="confirm_password" style="color: #66625e;font-weight: 800;background-color: #eaeaea;" placeholder="確認密碼" required />
+                          
+                          <input type="password" name="confirm_password" style="color: #66625e;font-weight: 800;background-color: #eaeaea;" placeholder="測試長度欄位" required />
+                          <input type="password" name="confirm_password" style="color: #66625e;font-weight: 800;background-color: #eaeaea;" placeholder="測試長度欄位" required />
+                          <button id="submitBtn1" style="background-color: #a59e94;color: #ffffff;border: 0px;" disabled>註冊</button>
                         </form>
                     </div>
                     
@@ -222,10 +226,10 @@
             <li class="nav-item dropdown">
               <a class="nav-link " href="#" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 20px;color: #6e573a;font-weight: 1000;font-size: 18px;">商品瀏覽</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="AllProduct_LoggedIn.html">所有商品</a></li>
-                <li><a class="dropdown-item" href="AllProduct_LoggedIn.html#noodle">泡麵</a></li>
-                <li><a class="dropdown-item" href="AllProduct_LoggedIn.html#drinks">飲料</a></li>
-                <li><a class="dropdown-item" href="AllProduct_LoggedIn.html#snacks">零食糖果</a></li>
+                <li><a class="dropdown-item" href="AllProduct.html">所有商品</a></li>
+                <li><a class="dropdown-item" href="AllProduct.html#noodle">泡麵</a></li>
+                <li><a class="dropdown-item" href="AllProduct.html#drinks">飲料</a></li>
+                <li><a class="dropdown-item" href="AllProduct.html#snacks">零食糖果</a></li>
               </ul>
             </li>
 
@@ -416,68 +420,6 @@
       ================================================== -->
 
       <section class="comment">
-
-        <!-- 左方填寫評論區域 -->
-        <div class="leftside">
-
-          <h5>留言評價</h5>
-
-          <form action="#" method="post">
-
-            <label for="fname">姓名</label><br>
-
-            <input type="text" id="fname" name="fname"><br>
-
-            <p>留言</p>
-            <textarea name="message" rows="10" cols="30" style="height: 200px;resize: none; "></textarea>
-            <br><br>
-
-            <!-- 星星評分部分 -->
-            <div class="star" id="star-rating">
-
-              <iconify-icon icon="ic:baseline-star" width="40" data-index="1" class="star-icon"></iconify-icon>
-              <iconify-icon icon="ic:baseline-star" width="40" data-index="2" class="star-icon"></iconify-icon>
-              <iconify-icon icon="ic:baseline-star" width="40" data-index="3" class="star-icon"></iconify-icon>
-              <iconify-icon icon="ic:baseline-star" width="40" data-index="4" class="star-icon"></iconify-icon>
-              <iconify-icon icon="ic:baseline-star" width="40" data-index="5" class="star-icon"></iconify-icon>
-              
-            </div>
-
-            <input type="submit" value="送出">
-            
-
-          </form>
-
-        </div>
-        
-        <!-- 星星js程式部分 -->
-        <script>
-          document.addEventListener("DOMContentLoaded", function() {
-            const starRatings = document.querySelectorAll(".star");
-        
-              starRatings.forEach((starRating) => {
-                const starIcons = starRating.querySelectorAll(".star-icon");
-        
-                  starIcons.forEach((starIcon) => {
-                      starIcon.addEventListener("click", function() {
-                        const clickedIndex = parseInt(this.getAttribute("data-index"));
-        
-                          starIcons.forEach((icon, index) => {
-                              if (index < clickedIndex) {
-                                  icon.setAttribute("icon", "ic:baseline-star");
-                                  icon.classList.add("selected");
-                              } else {
-                                  icon.setAttribute("icon", "ic:baseline-star");
-                                  icon.classList.remove("selected");
-                              }
-                          });
-        
-                        console.log("Selected Rating: " + clickedIndex);
-                      });
-                  });
-              });
-          });
-        </script>
         
         <!-- 右方顯示評論區域 -->
         <div class="rightside">

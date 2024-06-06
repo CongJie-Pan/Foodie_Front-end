@@ -160,22 +160,6 @@ html {
     color: #3f3f3f;
   }
 
-  a{ 
-    color:rgba(31, 31, 31, 0.4);
-    text-decoration: none;
-    text-decoration-color:white;
-    transition: color 0.3s, text-decoration-color 0.3s;
-  }
-  a:hover { /* hover 加上底線與放大字體效果*/
-    color: rgba(0, 0, 0, 0.975);
-    text-decoration: underline;
-    text-underline-offset: 1rem;
-    text-decoration-color: rgb(181, 181, 181);
-    font-size: 20px;
-    font-weight: bold;
-  
-  }
-
 /* 產品頁面 
 ------------------------------ */
 
@@ -436,7 +420,8 @@ form p {
 
 /* 左方評論區，名字部分 */
 /*專門設立一個class的原因在於不使購物車相同的text輸入框，會有一樣的樣式*/
-form input[type="text"],
+/*form input[type="text"] 為了不要和登入頁面的text屬性重疊到，而將其刪除。*/
+form input[type=""],
 form textarea {
     width: 100%;
     padding: 10px;
