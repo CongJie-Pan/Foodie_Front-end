@@ -19,6 +19,13 @@
     - 所以，這裡可以順利執行jsp的方法是先在intellij java專門的IDE 依照[JSP 在 Intellij 環境設置教學](https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-ee-application.html#war)，執行jsp程式碼。在intellij 開發jsp的優點在於可以直接在intellij 直接按下開始鍵就會執行tomcat，不須如以前那樣還要另外開tomcat。
     - 但是，後端還是以vscode開發為主，比較不用intellij ，所以可以把intellij主要程式碼的資料夾內容傳給後端，他們就可以順利編輯jsp了。
     (主要程式碼位置通常在：專案名稱\src\main\webapp)
+7. 進行程式單元測試
+    - 單獨依照程式架構圖的各程式模塊進行功能測試，可以先列點列出問題，再來修正錯誤。
+8. github Pages 前端網頁上傳
+    - 在專案repo頁面中，有個齒輪Settings按鈕，進去之後左側有個Pages。
+    - 點進去Pages之後，在Build and deployment處Source選擇Github Actions，選擇Static HTML，然後點擊綠色的Commit changes 網頁會自動生程。而網頁生成完成後，當該repo的檔案更新後，便會自動更新網頁內容。**因此可以先建立github Pages 以免最後發布時時常更改內容而疲勞。**
+    - 此外，檔案連結可以使用： ```<link rel="stylesheet" href="stylesheets/LoginArea.css">  ``` 讓檔案順利引入。
+    - 詳細教學可以觀看[該影片](https://youtu.be/e5AwNU3Y2es?si=M-7Y8XgOaLj34PUK)
 ---
 ### 關於前後端合作
 1. 好的前後端合作的前提是彼此要有多個共同溝通的時間，以及積極的交流彼此的進度和想法。因此，彼此的開會時間尤為重要。我們因為前端比較早開始(提前於發表日的37天前)，所以那時開始固定一週一天與後端開會。
